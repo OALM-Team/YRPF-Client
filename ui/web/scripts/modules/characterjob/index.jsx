@@ -32,23 +32,25 @@ class CharacterJob extends React.Component {
                 this.props.updateUIPosition(x,y);
             }}
             >
-                {this.props.characterjob.items.map((e,i) => {
-                    return <div key={i} className="characterjob-item">
-                        <div className="job-icon">
-                            <img src={assets.job["icon_" + e.jobId.toLowerCase()]} />
-                        </div>
-                        <div style={{paddingLeft: "10px"}}>
-                            <b>{e.levelName}</b>
-                            <div className="desc">
-                                {jobStrings.descriptions[e.jobId.toLowerCase()]}
+                <div style={{maxHeight: "450px", overflowY: "auto", padding: "5px"}}>
+                    {this.props.characterjob.items.map((e,i) => {
+                        return <div key={i} className="characterjob-item">
+                            <div className="job-icon">
+                                <img src={assets.job["icon_" + e.jobId.toLowerCase()]} />
                             </div>
-                            <div className="progress-bar" style={{marginTop: "5px"}}>
-                                <div className="inner-bar" style={{ width: "100%"}}></div>
-                                <span>{e.xp} XP</span>
+                            <div style={{paddingLeft: "10px"}}>
+                                <b>{e.levelName}</b>
+                                <div className="desc">
+                                    {jobStrings.descriptions[e.jobId.toLowerCase()]}
+                                </div>
+                                <div className="progress-bar" style={{marginTop: "5px"}}>
+                                    <div className="inner-bar" style={{ width: "100%"}}></div>
+                                    <span>{e.xp} XP</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                })}
+                    })}
+                </div>
         </UIWindow>
     }
 }

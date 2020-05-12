@@ -1,0 +1,74 @@
+.seller-container {
+    display: flex;
+    padding: 5px;
+
+    .shop-list {
+        border-radius: 10px;
+        background-color: $transparantColor;
+        height: 250px;
+        flex-grow: 1;
+        margin: 5px;
+        min-width: 165px;
+        padding: 10px;
+        position: relative;
+    }
+
+    .sell-list {
+        margin: 5px;
+        border-radius: 10px;
+        flex-grow: 2;
+        background-color: $transparantColor;
+        padding: 10px;
+        height: 250px;
+        overflow-y: auto;
+
+        .sell-item {
+            background-color: $transparantColor;
+            border-radius: 5px;
+            margin-bottom: 4px;
+            padding: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: white;
+            display: flex;
+            position: relative;
+
+            .sell-item-img {
+                height: 40px;
+                width: 40px;
+                min-width: 40px;
+            }
+
+            .sell-item-content {
+                margin-left: 10px;
+                font-size: 19px;
+                vertical-align: top;
+
+                .desc {
+                    font-size: 12px;
+                }
+            }
+
+            .price {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+                padding: 3px;
+                background-color: $successColor;
+                color: white;
+                font-size: 11px;
+                border-radius: 3px;
+                text-align: center;
+                min-width: 35px;
+            }
+
+            .price-minus {
+                background-color: $errorColor;
+            }
+
+            &:hover {
+                background-color: darken($color: $transparantColor, $amount: 10);
+            }
+        }
+    }
+}

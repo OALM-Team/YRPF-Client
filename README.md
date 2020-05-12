@@ -8,7 +8,7 @@ The UI is written in JS with React/Redux and Parcel Packager
 ## Setup
 - Clone the repository with GIT in your packages folder of Onset Gameserver
 - Install node.js (https://nodejs.org/en/) the current branch
-- Go in ./ui/web with your termine (cd ...)
+- Go in ./ui/web with your terminal (cd ...)
 - ```npm i``` this will install all dependencies
 - ```npm run build``` will build the dist version of the frontend
 - Add yrpf package to your server_config.json
