@@ -1,0 +1,51 @@
+.vseller {
+    overflow-x: hidden;
+    
+    .vseller-item {
+        background-color: $transparantColor;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        border: 1px solid lighten($color: $mainColor, $amount: 20%);
+    }
+
+    .v-image-container {
+        display: inline-block;
+        position: relative;
+
+        .v-image {
+            $size: 100px;
+            width: $size;
+            height: $size;
+            //border-radius: 5px;
+            border-right: 1px solid $mainColor;
+        }
+
+        .buy-btn {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 1px;
+        }
+    }
+    
+    .v-content {
+        display: inline-block;
+        vertical-align: top;
+        color: white;
+        width: 331px;
+        
+        .name {
+            font-weight: bold;
+            font-size: 18px;
+            background-color: $accentColor;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .desc {
+            padding: 5px;
+            font-size: 12px;
+        }
+    }
+}

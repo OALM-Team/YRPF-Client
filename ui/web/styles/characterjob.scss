@@ -1,0 +1,20 @@
+.characterjob-item {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    color: white;
+
+    b {
+        color: $accentColor;
+    }
+
+    .desc {
+        font-size: 14px;
+    }
+
+    .job-icon {
+        img {
+            height: 80px;
+        }
+    }
+}
