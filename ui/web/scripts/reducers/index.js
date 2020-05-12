@@ -6,5 +6,6 @@ import vchest from "./vchest";
 import map from "./map";
 import xpbar from "./xpbar";
 import characterjob from "./characterjob";
+import seller from "./seller";
 
-export { uiModules, inventory, garage, vseller, vchest, map, xpbar, characterjob }
+export { uiModules, inventory, garage, vseller, vchest, map, xpbar, characterjob, seller }
