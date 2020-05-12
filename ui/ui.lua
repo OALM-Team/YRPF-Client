@@ -22,6 +22,11 @@ function RemoteCallInterface(remoteCallType, parameters)
 end
 AddEvent("RemoteCallInterface", RemoteCallInterface)
 
+function RequestToogleUI(ui)
+    CallRemoteEvent("GlobalUI:ToogleWindow", ui)
+end
+AddEvent("RequestToogleUI", RequestToogleUI)
+
 AddEvent("OnKeyPress", function(key)
     if key == "I" then
         CallRemoteEvent("GlobalUI:ToogleWindow", "inventory")

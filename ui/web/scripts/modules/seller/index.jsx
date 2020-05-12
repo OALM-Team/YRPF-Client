@@ -53,7 +53,11 @@ class Seller extends React.Component {
     }
 
     submitCart() {
-
+        if(this.state.buyList.length() == 0) return;
+        for(let item of this.state.buyList) {
+            window.CallEvent("RemoteCallInterface", "Seller:BuySellItem", JSON.stringify({id: item.id, quantity: item.quantity}))
+        }
+        window.CallEvent("RequestToogleUI", "seller")
     }
 
     render() {
@@ -74,7 +78,9 @@ class Seller extends React.Component {
                                 <div className="quantity">{e.quantity}</div>
                             </div>
                         })}
-                        <div className={"ui-btn " + (this.getTotalPrice() == 0 ? "ui-btn-disabled" : "")} style={{position: "absolute", bottom: "5px", right: "5px", left: "5px"}}>
+                        <div className={"ui-btn " + (this.getTotalPrice() == 0 ? "ui-btn-disabled" : "")} 
+                            style={{position: "absolute", bottom: "5px", right: "5px", left: "5px"}}
+                            onClick={this.submitCart.bind(this)}>
                             {this.getTotalPrice() < 0 ? "Vendre" : "Acheter"} ({this.getTotalPrice()}$)
                         </div>
                     </div>
