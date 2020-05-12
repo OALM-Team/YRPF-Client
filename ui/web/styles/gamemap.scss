@@ -1,0 +1,31 @@
+.gamemap-container {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    background-color: #1555b9;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    border-radius: 5px;
+    border: 3px solid $transparantColor;
+}
+
+.map-canvas {
+    transition: 0s;
+    position: absolute;
+    top: -80;
+    left: -80;
+    right: -80;
+    bottom: -80;
+    background-color: #1555b9;
+}
+
+.map-canvas-big {
+    transition: 0s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #1555b9;
+}

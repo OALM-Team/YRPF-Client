@@ -1,0 +1,126 @@
+$mainColor: #121212;
+$transparantColor: #1212128c;
+$accentColor: #0a92f5;
+$successColor: #05be3d;
+$disabledColor: #696969;
+$uiText: #d8b000;
+
+@import './fonts.scss';
+@import './leaflet.css';
+@import './uiwindow.scss';
+@import './inventory.scss';
+@import './atm.scss';
+@import './garage.scss';
+@import './vseller.scss';
+@import './arrowSelector.scss';
+@import './gamemap.scss';
+@import './xpbar.scss';
+@import './characterjob.scss';
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.context-item {
+    cursor: pointer;
+    text-align: left;
+    padding: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    background-color: $transparantColor;
+    &:hover {
+        background-color: $mainColor;
+    }
+}
+
+.inline {
+    display: inline-block !important;
+}
+
+.ui-btn-small {
+    padding: 3px;
+    text-align: center;
+    background-color: $accentColor;
+    font-size: 9px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: white;
+}
+
+.ui-btn {
+    padding: 10px;
+    color: white;
+    background-color: $accentColor;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: darken($color: $accentColor, $amount: 10%);
+    }
+
+    &:active {
+        transform: scale(0.95);
+        background-color: darken($color: $accentColor, $amount: 15%);
+    }
+}
+
+.ui-btn-success {
+    background-color: $successColor;
+
+    &:hover {
+        background-color: darken($color: $successColor, $amount: 10%);
+    }
+
+    &:active {
+        transform: scale(1);
+        background-color: darken($color: $successColor, $amount: 15%);
+    }
+}
+
+
+.ui-btn-disabled {
+    background-color: $disabledColor;
+
+    &:hover {
+        background-color: darken($color: $disabledColor, $amount: 10%);
+    }
+
+    &:active {
+        transform: scale(1);
+        background-color: darken($color: $disabledColor, $amount: 15%);
+    }
+}
+
+.progress-bar {
+    background-color: #edf0f4b9;
+    height: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 20px;
+    overflow: hidden;
+    position: relative;
+
+    .inner-bar {
+        background-color: $accentColor;
+        height: 20px;
+        width: 50%;
+        position: absolute;
+    }
+
+    span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        font-weight: bold;
+    }
+}

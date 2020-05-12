@@ -1,0 +1,25 @@
+.uiwindow {
+    position: fixed;
+
+    .header {
+        background: $mainColor;
+        color: white;
+        padding: 10px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        user-select: none;
+        font-weight: bold;
+        position: relative;
+    }
+
+    .content {
+        user-select: none;
+        padding: 7px;
+        background-color: $transparantColor;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border: 1px solid $mainColor;
+        position: relative;
+        transition: height 0.2s ease-out;
+    }
+}

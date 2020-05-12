@@ -1,0 +1,63 @@
+$slotSize: 80px;
+
+.garage {
+    .garage-vehicles-container {
+        min-height: 80px;
+        .vehicle-slot {
+            width: $slotSize;
+            height: $slotSize;
+            background-color: $transparantColor;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            display: inline-block;
+            text-align: center;
+            position: relative;
+            &:hover {
+                background-color:  darken($transparantColor, 10%);
+                transform: scale(0.95);
+            }
+
+            .v-image {
+                width: $slotSize - 10;
+                height: $slotSize - 10;
+                margin-top: 5px;
+            }
+
+            .v-plate {
+                position: absolute;
+                bottom: 2px;
+                right: 0px;
+                left: 0px;
+                font-size: 8px;
+                color: white;
+                background-color: $mainColor;
+                padding: 2px;
+                text-align: center;
+                border-radius: 2px;
+            }
+
+            .v-color {
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                text-align: center;
+                border-radius: 2px;
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        
+        .vehicle-slot-selected {
+            background-color: $accentColor;
+            
+            &:hover {
+                background-color:  darken($accentColor, 10%);
+                transform: scale(0.95);
+            }
+        }
+    }
+}
