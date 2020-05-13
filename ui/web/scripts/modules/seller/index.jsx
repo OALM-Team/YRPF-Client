@@ -84,7 +84,7 @@ class Seller extends React.Component {
                         <div className={"ui-btn " + (this.getTotalPrice() == 0 ? "ui-btn-disabled" : "")} 
                             style={{position: "absolute", bottom: "5px", right: "5px", left: "5px"}}
                             onClick={this.submitCart.bind(this)}>
-                            {this.getTotalPrice() < 0 ? i18n.t("ui.common.sell", []) : i18n.t("ui.common.buy", [])} ({this.getTotalPrice()}$)
+                            {this.getTotalPrice() < 0 ? i18n.t("ui.common.sell", []) : i18n.t("ui.common.buy", [])} ({-this.getTotalPrice()}$)
                         </div>
                     </div>
                     <div className="sell-list">
