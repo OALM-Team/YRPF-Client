@@ -1,4 +1,5 @@
 WaypointsList = {}
+I18N = {}
 
 function OnPackageStart()
     CreateTimer(function()
@@ -9,11 +10,11 @@ AddEvent("OnPackageStart", OnPackageStart)
 
 AddEvent("OnPlayerStartEnterVehicle", function(vehicleId, seatId)
     if GetVehiclePropertyValue(vehicleId, "locked") == 1 then
-        SendLocalToast("error", "Le véhicule est verrouillé")
+        SendLocalToast("error", GetI18NText("action.vehicle.locked"))
         return false 
     end
     if GetPlayerPropertyValue(GetPlayerId(), "wearId") ~= nil and GetPlayerPropertyValue(GetPlayerId(), "wearId") ~= "" then
-        SendLocalToast("error", "Vous portez quelque chose")
+        SendLocalToast("error", GetI18NText("action.vehicle.wearSomething"))
         return false
     end
 end)
@@ -112,3 +113,20 @@ function SetLocalPlayerRotation(pitch, yaw, roll)
     SkeletalMeshComponent:SetRelativeRotation(FRotator(pitch, yaw, roll))
 end
 AddEvent("SetLocalPlayerRotation", SetLocalPlayerRotation)
+
+function ResetI18n()
+    I18N = {}
+end
+AddEvent("I18N:Reset", ResetI18n)
+
+function AddKeyValueI18n(key, value)
+    I18N[key] = value
+end
+AddEvent("I18N:AddKeyValue", AddKeyValueI18n)
+
+function GetI18NText(key)
+    if(I18N[key] ~= nil) then
+        return I18N[key]
+    end
+    return key
+end

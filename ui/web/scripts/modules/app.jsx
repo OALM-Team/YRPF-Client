@@ -5,6 +5,7 @@ import { setWindowState } from "../actions/ui_modules";
 import { UIWindow } from "../components";
 import {Inventory, ATM, Garage, VSeller, CustomCharacter, VChest, GameMap, XPBar, BigMap, Death, CharacterJob, Seller} from "./";
 import { ToastContainer, toast } from 'react-toastify';
+import * as i18n from "../i18n";
 
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -16,11 +17,11 @@ class App extends React.Component {
 
     componentDidMount() {
         window.CallEvent("RemoteCallInterface", "Global:UIReady");
+        i18n.syncWithLua();
         //this.props.setWindowState("inventory", true)
     }
 
     componentDidUpdate(prevProps, prevState) {
-        
     }
 
     render() {
@@ -43,7 +44,8 @@ class App extends React.Component {
 }
 export default connect((state, ownProps) => {
     return {
-        uiModules: state.uiModules
+        uiModules: state.uiModules,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

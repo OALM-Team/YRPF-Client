@@ -4,7 +4,7 @@ import assets from "../../assets";
 import * as React from "react";
 import constants from "../../actions/constants";
 import { CirclePicker } from 'react-color';
-import jobStrings from "../../strings/job";
+import * as i18n from "../../i18n";
 
 class CharacterJob extends React.Component {
 
@@ -25,7 +25,7 @@ class CharacterJob extends React.Component {
     }
 
     render() {
-        return <UIWindow type="characterjob" title="Métiers" width="400px" height="50px"
+        return <UIWindow type="characterjob" title={i18n.t("ui.characterJob.windowName", [])} width="400px" height="50px"
             x={this.props.uiModules.uiPosition.characterjob.x} 
             y={this.props.uiModules.uiPosition.characterjob.y}
             onPositionUpdated={(x,y) => {
@@ -39,13 +39,15 @@ class CharacterJob extends React.Component {
                                 <img src={assets.job["icon_" + e.jobId.toLowerCase()]} />
                             </div>
                             <div style={{paddingLeft: "10px"}}>
-                                <b>{e.levelName}</b>
+                                <b>
+                                    {i18n.t("ui.characterJob.jobLevel_" + e.levelName.toLowerCase(), [])}
+                                </b>
                                 <div className="desc">
-                                    {jobStrings.descriptions[e.jobId.toLowerCase()]}
+                                    {i18n.t("ui.characterJob.jobDesc_" + e.jobId.toLowerCase(), [])}
                                 </div>
                                 <div className="progress-bar" style={{marginTop: "5px"}}>
                                     <div className="inner-bar" style={{ width: "100%"}}></div>
-                                    <span>{e.xp} XP</span>
+                                    <span>{e.xp} {i18n.t("ui.common.xp", [])}</span>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +60,8 @@ class CharacterJob extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        characterjob: state.characterjob
+        characterjob: state.characterjob,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

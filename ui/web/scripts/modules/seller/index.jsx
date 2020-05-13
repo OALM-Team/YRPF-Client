@@ -4,7 +4,7 @@ import assets from "../../assets";
 import * as React from "react";
 import constants from "../../actions/constants";
 import { CirclePicker } from 'react-color';
-import itemStrings from "../../strings/items";
+import * as i18n from "../../i18n";
 
 class Seller extends React.Component {
 
@@ -20,6 +20,8 @@ class Seller extends React.Component {
 
     componentDidMount() {
         window.CallEvent("SetInputMode", 1)
+        window.CallEvent("Play2DSound", "sounds/shop_bell.mp3", 0.2)
+        this.props.resetSellerItems();
     }
 
     componentWillUnmount() {
@@ -53,15 +55,16 @@ class Seller extends React.Component {
     }
 
     submitCart() {
-        if(this.state.buyList.length() == 0) return;
+        if(this.state.buyList.length == 0) return;
         for(let item of this.state.buyList) {
             window.CallEvent("RemoteCallInterface", "Seller:BuySellItem", JSON.stringify({id: item.id, quantity: item.quantity}))
         }
         window.CallEvent("RequestToogleUI", "seller")
+        window.CallEvent("Play2DSound", "sounds/cash_register.mp3", 0.2)
     }
 
     render() {
-        return <UIWindow type="seller" title="Vendeur" width="600px" height="50px"
+        return <UIWindow type="seller" title={i18n.t("ui.seller.windowName", [])} width="600px" height="50px"
             x={this.props.uiModules.uiPosition.seller.x} 
             y={this.props.uiModules.uiPosition.seller.y}
             onPositionUpdated={(x,y) => {
@@ -81,7 +84,7 @@ class Seller extends React.Component {
                         <div className={"ui-btn " + (this.getTotalPrice() == 0 ? "ui-btn-disabled" : "")} 
                             style={{position: "absolute", bottom: "5px", right: "5px", left: "5px"}}
                             onClick={this.submitCart.bind(this)}>
-                            {this.getTotalPrice() < 0 ? "Vendre" : "Acheter"} ({this.getTotalPrice()}$)
+                            {this.getTotalPrice() < 0 ? i18n.t("ui.common.sell", []) : i18n.t("ui.common.buy", [])} ({this.getTotalPrice()}$)
                         </div>
                     </div>
                     <div className="sell-list">
@@ -93,7 +96,7 @@ class Seller extends React.Component {
                                 <div className="sell-item-content">
                                     {e.name}
                                     <div className="desc">
-                                        {itemStrings.descriptions[e.id.toString()]}
+                                        {i18n.t("ui.item.desc_" + e.id.toString(), [])}
                                     </div>
                                 </div>
                                 <div className={"price " + (e.price < 0 ? "price-minus" : "")}>
@@ -110,10 +113,12 @@ class Seller extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        seller: state.seller
+        seller: state.seller,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {
+        resetSellerItems: () => dispatch({type: constants.RESET_SELLER}),
         updateUIPosition: (x,y) =>  dispatch({ type: constants.UPDATE_UI_POSITION, windowType: "seller", x, y })
     }
 })(Seller);

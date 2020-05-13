@@ -18,7 +18,7 @@ export default (state, action) => {
             return {...state, items: []}
 
         case constants.ADD_SELLER_ITEM:
-            //state.items.push({jobId: action.jobId, xp: action.xp, level: action.level, levelName: action.levelName});
+            state.items.push({id: action.id, name: action.name, price: action.price});
             return {...state, items: state.items}
 
         default: return state;
