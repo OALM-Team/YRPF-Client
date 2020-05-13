@@ -15,6 +15,7 @@ The UI is written in JS with React/Redux and Parcel Packager
 
 ## Contribute
 We are at a early stage of the Framework and the Backend is not open sourced right now, so i will not accept PR right now, but it will be available soon.
+But you can help to translate for other language : https://poeditor.com/join/project/FT7CELbHb6
 
 ## Authors
 Yuki https://github.com/nightwolf93
