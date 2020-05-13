@@ -176,5 +176,9 @@
     "toast.job.requirement_unrespected": "Toutes les conditions ne sont pas respectées pour récolter cette ressource",
     "toast.job.already_used": "Cette ressource est occupée par un autre joueur",
     "toast.vehicle.no_space_left": "Impossible car il n'y a plus de place disponible",
-    "toast.tool.already_used": "Cette outil est déjà en cours d'utilisation"
+    "toast.tool.already_used": "Cette outil est déjà en cours d'utilisation",
+    "toast.seller.no_enought_money_on_me": "Vous n'avez pas assez d'argent sur vous pour x{0} {1}",
+    "toast.seller.success_buy": "Vous avez acheté x{0} {1}",
+    "toast.seller.no_enought_item_on_me": "Vous n'avez pas x{0} {1} pour vendre",
+    "toast.seller.sell_success": "Vous avez vendu x{0} {1}"
 }
