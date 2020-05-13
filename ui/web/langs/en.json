@@ -1,5 +1,10 @@
 {
     "ui.common.validate": "Validate",
+    "ui.common.use": "Use",
+    "ui.common.throw": "Throw",
+    "ui.common.buy": "Buy",
+    "ui.common.sell": "Sell",
+    "ui.common.xp": "XP",
 
     "ui.characterCustom.windowName": "Character creation",
     "ui.characterCustom.name": "Nickname/Name",
@@ -84,5 +89,55 @@
     "ui.options.Pantalon 8": "Pant 8",
     "ui.options.Chaussure 1": "Shoes 1",
     "ui.options.Chaussure 2": "Shoes 2",
-    "ui.options.Chaussure 3": "Shoes 3"
+    "ui.options.Chaussure 3": "Shoes 3",
+
+    "ui.inventory.windowName": "Inventory",
+
+    "ui.atm.windowName": "ATM",
+    "ui.atm.greetings": "Welcome on the Onset ATM",
+    "ui.atm.deposit": "DEPOSIT",
+    "ui.atm.withdraw": "WITHDRAW",
+
+    "ui.garage.windowName": "Garage",
+    "ui.garage.requestVehicle": "Take out the vehicle",
+    
+    "ui.vseller.windowName": "Vehicle Seller",
+
+    "ui.bigmap.windowName": "Map",
+    
+    "ui.death.windowName": "Death",
+    "ui.death.sentence1": "You are in a coma !",
+    "ui.death.sentence2": "You can wait for help, or wait for your death slowly.",
+    "ui.death.sentence3": "Everything you have on you will fall to the ground.",
+
+    "ui.characterJob.windowName": "Jobs",
+    "ui.characterJob.jobLevel_bucheron debutant": "Beginner Lumberjack",
+    "ui.characterJob.jobLevel_bucheron en herbe": "Apprentice Lumberjack",
+    "ui.characterJob.jobLevel_eboueur": "Garbage collector",
+    "ui.characterJob.jobLevel_livreur debutant": "Beginner deliveryman",
+    "ui.characterJob.jobLevel_mineur debutant": "Miner Beginner",
+    "ui.characterJob.jobLevel_pecheur debutant": "Beginner Fisherman",
+    "ui.characterJob.jobLevel_police": "Police",
+    "ui.characterJob.jobDesc_lumberjack": "Cut trees in a forest, and make boards to resell them at a better price",
+    "ui.characterJob.jobDesc_garbage": "Skim the city in search of garbage, then go to the recycling center and put them in a trash can, or recycle them",
+    "ui.characterJob.jobDesc_delivery": "You are a truck driver at heart delivering the parcels all over the island, bring them to the right address, the further away, the better you get paid",
+    "ui.characterJob.jobDesc_miner": "Go to the quarry and find ore deposits to resell for a good price, with luck you will find the jackpot",
+    "ui.characterJob.jobDesc_fisher": "Take your boat and sail in search of tags at sea, these are fishing spots",
+    "ui.characterJob.jobDesc_police": "You make order reign on the island, it's up to you to make yourself respected and to make respect the laws",
+ 
+    "ui.seller.windowName": "Seller",
+
+    "ui.vchest.windowName": "Vehicle Chest",
+
+    "ui.item.desc_1": "A juicy and inexpensive apple",
+    "ui.item.desc_2": "Simply money",
+    "ui.item.desc_3": "Vehicle keys",
+    "ui.item.desc_4": "A classic lumberjack ax",
+    "ui.item.desc_5": "A classic miner's pick",
+    "ui.item.desc_6": "A rare commodity on this island, it is quite exotic and in demand on the island",
+    "ui.item.desc_7": "A classic fishing rod",
+    "ui.item.desc_8": "Quite common fish",
+ 
+    "action.vehicle.locked": "Vehicle is locked",
+    "action.vehicle.wearSomething": "You wear something"
 }
