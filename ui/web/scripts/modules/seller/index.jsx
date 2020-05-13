@@ -94,7 +94,7 @@ class Seller extends React.Component {
                             }}>
                                 <img className="sell-item-img" src={assets.items[e.id.toString()]} />
                                 <div className="sell-item-content">
-                                    {e.name}
+                                    {i18n.t("item.name.1" + e.id.toString(), [])}
                                     <div className="desc">
                                         {i18n.t("ui.item.desc_" + e.id.toString(), [])}
                                     </div>

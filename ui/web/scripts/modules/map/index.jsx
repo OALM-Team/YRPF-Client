@@ -74,6 +74,7 @@ class GameMap extends React.Component {
                 <ImageOverlay url={assets.gamemap.map} bounds={[[0,0], [1943,2000]]} />
 
                 <Marker style={{transform: "rotate(" + (this.props.map.heading + 90) + "deg)"}} 
+                    zIndexOffset={300}
                     position={[this.worldToMapImgY(this.props.map.characterPosition.y), this.worldToMapImgX(this.props.map.characterPosition.x)]}
                     icon={this.state.playerIcon} />
 

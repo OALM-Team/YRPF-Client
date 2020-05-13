@@ -2,7 +2,8 @@ import { store } from "../app/store";
 
 const langs = {
     "fr": require("../../langs/fr.json"),
-    "en": require("../../langs/en.json")
+    "en": require("../../langs/en.json"),
+    "de": require("../../langs/de.json")
 }
 
 export const t = (key, params) => {

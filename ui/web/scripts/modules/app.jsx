@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import constants from "../actions/constants";
 import { setWindowState } from "../actions/ui_modules";
 import { UIWindow } from "../components";
-import {Inventory, ATM, Garage, VSeller, CustomCharacter, VChest, GameMap, XPBar, BigMap, Death, CharacterJob, Seller} from "./";
+import {Inventory, ATM, Garage, VSeller, CustomCharacter, VChest, GameMap, XPBar, BigMap, Death, CharacterJob, Seller, LangSelector} from "./";
 import { ToastContainer, toast } from 'react-toastify';
 import * as i18n from "../i18n";
 
@@ -39,6 +39,7 @@ class App extends React.Component {
             {this.props.uiModules.death ? <Death /> : null}
             {this.props.uiModules.characterjob ? <CharacterJob /> : null}
             {this.props.uiModules.seller ? <Seller /> : null}
+            {this.props.uiModules.langSelector ? <LangSelector /> : null}
         </div>
     }
 }
