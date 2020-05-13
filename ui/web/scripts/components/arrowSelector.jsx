@@ -39,7 +39,7 @@ export default class ArrowSelector extends React.Component {
             <div className="arrow-selector-header">{this.props.name}</div>
             <div className="arrow-selector-arrow" onClick={this.previous.bind(this)}>{"<"}</div>
             <div className="arrow-selector-text">
-                {i18n.t("ui.options." + this.props.options[this.state.index].name, [])}
+                {i18n.t("ui.options." + this.props.options[this.state.index].name.split(' ').join("_"), [])}
             </div>
             <div className="arrow-selector-arrow" onClick={this.next.bind(this)}>{">"}</div>
         </div>
