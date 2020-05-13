@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as i18n from "../i18n";
 
 export default class ArrowSelector extends React.Component {
     constructor(props) {
@@ -38,7 +39,7 @@ export default class ArrowSelector extends React.Component {
             <div className="arrow-selector-header">{this.props.name}</div>
             <div className="arrow-selector-arrow" onClick={this.previous.bind(this)}>{"<"}</div>
             <div className="arrow-selector-text">
-                {this.props.options[this.state.index].name}
+                {i18n.t("ui.options." + this.props.options[this.state.index].name, [])}
             </div>
             <div className="arrow-selector-arrow" onClick={this.next.bind(this)}>{">"}</div>
         </div>

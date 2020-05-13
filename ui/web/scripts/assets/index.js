@@ -10,7 +10,9 @@ export default {
         icon_delivery_stock: require("../../assets/gamemap/icon_delivery_stock.png"),
         icon_miner: require("../../assets/gamemap/icon_miner.png"),
         icon_miner_seller: require("../../assets/gamemap/icon_miner_seller.png"),
-        icon_fisher_seller: require("../../assets/gamemap/icon_fisher_seller.png")
+        icon_fisher_seller: require("../../assets/gamemap/icon_fisher_seller.png"),
+        icon_atm: require("../../assets/gamemap/icon_atm.png"),
+        icon_vseller: require("../../assets/gamemap/icon_vseller.png")
     },
     items: {
         "1": require("../../assets/icons/apple.png"),

@@ -3,7 +3,7 @@ GlobalUI = nil
 function OnPackageStart()
     ShowHealthHUD(false)
 
-    GlobalUI = CreateWebUI(0, 0, 0, 0, 5, 50)
+    GlobalUI = CreateWebUI(0, 0, 0, 0, 5, 90)
     SetWebAlignment(GlobalUI, 0.0, 0.0)
     SetWebAnchors(GlobalUI, 0.0, 0.0, 1.0, 1.0)
     SetWebVisibility(GlobalUI, WEB_HITINVISIBLE)

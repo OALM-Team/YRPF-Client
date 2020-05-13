@@ -4,6 +4,7 @@ import assets from "../../assets";
 import * as React from "react";
 import constants from "../../actions/constants";
 import options from "./options";
+import * as i18n from "../../i18n";
 
 class CustomCharacter extends React.Component {
 
@@ -143,7 +144,7 @@ class CustomCharacter extends React.Component {
     }
 
     render() {
-        return <UIWindow type="customCharacter" title="Création de personnage" width="450px" height="50px"
+        return <UIWindow type="customCharacter" title={i18n.t("ui.characterCustom.windowName", [])} width="450px" height="50px"
             x={this.props.uiModules.uiPosition.customCharacter.x} 
             y={this.props.uiModules.uiPosition.customCharacter.y}
             onPositionUpdated={(x,y) => {
@@ -151,7 +152,7 @@ class CustomCharacter extends React.Component {
             }}
             >
             <div className="arrow-selector">
-                <div className="arrow-selector-header">Prenom/Nom</div>
+                <div className="arrow-selector-header">{i18n.t("ui.characterCustom.name", [])}</div>
                 <div className="arrow-selector-text" style={{verticalAlign:"middle", textAlign: "center", paddingLeft: "18px"}}>
                     <input type="text" value={this.state.name} onChange={(evt) => {
                         if(!/^[a-zA-Z ]+$/.test(evt.target.value)) return;
@@ -160,28 +161,28 @@ class CustomCharacter extends React.Component {
                     }} />
                 </div>
             </div>
-            <ArrowSelector name="Sexe" options={options.gender}
+            <ArrowSelector name={i18n.t("ui.characterCustom.gender", [])} options={options.gender}
                 onChange={this.onGenderChange.bind(this)} />
-            <ArrowSelector name="Apparence" 
+            <ArrowSelector name={i18n.t("ui.characterCustom.body", [])} 
                 options={options.bodies.filter(x => x.gender == this.state.gender)}
                 onChange={this.onBodyChange.bind(this)} />
-            <ArrowSelector name="Cheveux" 
+            <ArrowSelector name={i18n.t("ui.characterCustom.hair", [])}
                 options={options.hairs.filter(x => x.gender == this.state.gender)}
                 onChange={this.onHairChange.bind(this)} />
-            <ColorSelector name="Couleur Cheveux" onChange={this.onHairColorChange.bind(this)} />
-            <ArrowSelector name="Haut" 
+            <ColorSelector name={i18n.t("ui.characterCustom.hair_color", [])} onChange={this.onHairColorChange.bind(this)} />
+            <ArrowSelector name={i18n.t("ui.characterCustom.top", [])} 
                 options={options.top.filter(x => x.gender == this.state.gender)}
                 onChange={this.onTopChange.bind(this)} />
-            <ArrowSelector name="Pantalon" 
+            <ArrowSelector name={i18n.t("ui.characterCustom.pant", [])}
                 options={options.pants.filter(x => x.gender == this.state.gender)}
                 onChange={this.onPantChange.bind(this)} />
-            <ArrowSelector name="Chaussures" 
+            <ArrowSelector name={i18n.t("ui.characterCustom.shoes", [])}
                 options={options.shoes.filter(x => x.gender == this.state.gender)}
                 onChange={this.onShoesChange.bind(this)} />
 
             <div className={"ui-btn " + (!this.isValidForm() ? "ui-btn-disabled" : "")}
                 onClick={() => { this.requestSave() }}>
-                Valider
+                {i18n.t("ui.common.validate", [])}
             </div>
         </UIWindow>
     }
@@ -189,7 +190,8 @@ class CustomCharacter extends React.Component {
 
 export default connect((state, ownProps) => {
     return {
-        uiModules: state.uiModules
+        uiModules: state.uiModules,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

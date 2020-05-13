@@ -3,6 +3,7 @@ import { UIWindow } from "../../components";
 import assets from "../../assets";
 import * as React from "react";
 import constants from "../../actions/constants";
+import * as i18n from "../../i18n";
 
 class Garage extends React.Component {
 
@@ -27,7 +28,7 @@ class Garage extends React.Component {
     }
 
     render() {
-        return <UIWindow type="garage" title="Garage" width="450px" height="50px"
+        return <UIWindow type="garage" title={i18n.t("ui.garage.windowName", [])} width="450px" height="50px"
             x={this.props.uiModules.uiPosition.garage.x} 
             y={this.props.uiModules.uiPosition.garage.y}
             onPositionUpdated={(x,y) => {
@@ -48,7 +49,7 @@ class Garage extends React.Component {
                     </div>
                     <div className={"ui-btn " + (this.state.selectedVehicleUUID == "" ? "ui-btn-disabled" : "")}
                         onClick={() => { this.requestVehicle() }}>
-                        Sortir le véhicule
+                        {i18n.t("ui.garage.requestVehicle", [])}
                     </div>
                 </div>
         </UIWindow>
@@ -58,7 +59,8 @@ class Garage extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        garage: state.garage
+        garage: state.garage,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

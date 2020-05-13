@@ -5,6 +5,7 @@ import assets from "../../assets";
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 import { inventory } from "../../reducers";
 import constants from "../../actions/constants";
+import * as i18n from "../../i18n";
 
 class Inventory extends React.Component {
     constructor(props) {
@@ -41,7 +42,7 @@ class Inventory extends React.Component {
 
     render() {
         return <div id="inventory">
-            <UIWindow type="inventory" title="Inventaire" width="401px" height="100px"
+            <UIWindow type="inventory" title={i18n.t("ui.inventory.windowName", [])} width="401px" height="100px"
                 x={this.props.uiModules.uiPosition.inventory.x} 
                 y={this.props.uiModules.uiPosition.inventory.y}
                 onPositionUpdated={(x,y) => {
@@ -62,7 +63,7 @@ class Inventory extends React.Component {
                     
                 </div>
 
-                {this.state.throwWindow ? <UIWindow type="inventory_throw_select" title="Jeter" width="200px" height="50px"
+                {this.state.throwWindow ? <UIWindow type="inventory_throw_select" title={i18n.t("ui.common.throw", [])} width="200px" height="50px"
                 x={410} 
                 y={0}>
                     <input type="number" style={{marginBottom: "5px"}} value={this.state.throwQuantity} onChange={this.onQuantityChange.bind(this)} />
@@ -71,7 +72,7 @@ class Inventory extends React.Component {
                             JSON.stringify({id: this.state.lastSelectedItem.id, quantity: this.state.throwQuantity}));
                             this.setState({throwWindow: false})
                              }}>
-                        Jeter
+                        {i18n.t("ui.common.throw", [])}
                     </div>
                 </UIWindow> : null}
                 
@@ -86,10 +87,10 @@ class Inventory extends React.Component {
             <ContextMenu id="item-context">
                 <MenuItem onClick={() => { window.CallEvent("RemoteCallInterface", "Inventory:UseItem", 
                         JSON.stringify({id: this.state.lastSelectedItem.id})) }}>
-                    <div className="context-item">Utiliser</div>
+                    <div className="context-item">{i18n.t("ui.common.use", [])}</div>
                 </MenuItem>
                 <MenuItem onClick={() => this.setState({throwWindow: true})}>
-                    <div className="context-item">Jeter</div>
+                    <div className="context-item">{i18n.t("ui.common.throw", [])}</div>
                 </MenuItem>
             </ContextMenu>
         </div>
@@ -99,7 +100,8 @@ class Inventory extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        inventory: state.inventory
+        inventory: state.inventory,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

@@ -5,6 +5,7 @@ import * as React from "react";
 import constants from "../../actions/constants";
 import { Map, ImageOverlay, Marker, Polygon } from 'react-leaflet'
 import { CRS, Icon, DivIcon } from "leaflet";
+import * as i18n from "../../i18n";
 
 class Death extends React.Component {
 
@@ -23,7 +24,7 @@ class Death extends React.Component {
     }
 
     render() {
-        return <UIWindow type="death" title="Mort" width="300px" height="370px"
+        return <UIWindow type="death" title={i18n.t("ui.death.windowName", [])} width="300px" height="370px"
         x={this.props.uiModules.uiPosition.death.x} 
         y={this.props.uiModules.uiPosition.death.y}
         onPositionUpdated={(x,y) => {
@@ -35,10 +36,10 @@ class Death extends React.Component {
                 <div style={{textAlign: "center", marginTop: "20px"}}>
                     <img src={require("../../../assets/death_icon.png")} style={{width: "150px"}} />
                 </div>
-                <h3>Vous êtes dans le coma !</h3>
+                <h3>{i18n.t("ui.death.sentence1", [])}</h3>
                 <div>
-                    Vous pouvez attendre les secours, ou attendre votre mort doucement.<br /><br />
-                    Tout ce que vous avez sur vous va tomber au sol.
+                    {i18n.t("ui.death.sentence2", [])}<br /><br />
+                    {i18n.t("ui.death.sentence3", [])}
                 </div>
             </div>
         </UIWindow>;
@@ -47,7 +48,8 @@ class Death extends React.Component {
 
 export default connect((state, ownProps) => {
     return {
-        uiModules: state.uiModules
+        uiModules: state.uiModules,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

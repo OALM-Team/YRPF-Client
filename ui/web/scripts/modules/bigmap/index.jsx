@@ -5,6 +5,8 @@ import * as React from "react";
 import constants from "../../actions/constants";
 import { Map, ImageOverlay, Marker, Polygon } from 'react-leaflet'
 import { CRS, Icon, DivIcon } from "leaflet";
+import * as i18n from "../../i18n";
+
 
 class BigMap extends React.Component {
 
@@ -68,7 +70,7 @@ class BigMap extends React.Component {
     }
 
     render() {
-        return <UIWindow type="customCharacter" title="Carte" width="550px" height="350px"
+        return <UIWindow type="customCharacter" title={i18n.t("ui.bigmap.windowName", [])} width="550px" height="350px"
         x={this.props.uiModules.uiPosition.bigmap.x} 
         y={this.props.uiModules.uiPosition.bigmap.y}
         onPositionUpdated={(x,y) => {
@@ -108,7 +110,8 @@ class BigMap extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        map: state.map
+        map: state.map,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

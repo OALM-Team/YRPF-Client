@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { UIWindow } from "../../components";
 import constants from "../../actions/constants";
 import {KeyPad} from "../../components";
+import * as i18n from "../../i18n";
 
 class ATM extends React.Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class ATM extends React.Component {
     }
 
     render() {
-        return <UIWindow type="atm" title="ATM" width="450px" height="160px"
+        return <UIWindow type="atm" title={i18n.t("ui.atm.windowName", [])} width="450px" height="160px"
             x={this.props.uiModules.uiPosition.atm.x} 
             y={this.props.uiModules.uiPosition.atm.y}
             onPositionUpdated={(x,y) => {
@@ -46,19 +47,19 @@ class ATM extends React.Component {
                 <div className="atm">
                     {this.state.operationType == null ? <div>
                             <div className="ribbon animated fadeIn">
-                            Merci d'utiliser les ATM de Onset Paradise
+                            {i18n.t("ui.atm.greetings", [])}
                         </div>
 
                         <div className="animated fadeIn" style={{textAlign: "center", marginTop: "20px"}}>
                             <div className="atm-button" onClick={() => {
                                 this.setState({value: "", operationType: "deposit"})
                             }}>
-                                DEPOT
+                                {i18n.t("ui.atm.deposit", [])}
                             </div>
                             <div className="atm-button" onClick={() => {
                                 this.setState({value: "", operationType: "withdraw"})
                             }}>
-                                RETRAIT
+                                {i18n.t("ui.atm.withdraw", [])}
                             </div>
                         </div>
                     </div> : null}
@@ -72,7 +73,7 @@ class ATM extends React.Component {
                         <br />
                         <div style={{textAlign: "center"}}>
                             <div className="atm-button" onClick={() => this.deposit()}>
-                                DEPOSER
+                                {i18n.t("ui.atm.deposit", [])}
                             </div>
                         </div>
                     </div> : null}
@@ -86,7 +87,7 @@ class ATM extends React.Component {
                         <br />
                         <div style={{textAlign: "center"}}>
                             <div className="atm-button" onClick={() => this.withdraw()}>
-                                RETIRER
+                                {i18n.t("ui.atm.withdraw", [])}
                             </div>
                         </div>
                     </div> : null}
@@ -98,7 +99,8 @@ class ATM extends React.Component {
 
 export default connect((state, ownProps) => {
     return {
-        uiModules: state.uiModules
+        uiModules: state.uiModules,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

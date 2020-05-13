@@ -4,6 +4,7 @@ import assets from "../../assets";
 import * as React from "react";
 import constants from "../../actions/constants";
 import { CirclePicker } from 'react-color';
+import * as i18n from "../../i18n";
 
 class VSeller extends React.Component {
 
@@ -31,7 +32,7 @@ class VSeller extends React.Component {
     }
 
     render() {
-        return <UIWindow type="vseller" title="Vendeur de véhicules" width="450px" height="50px"
+        return <UIWindow type="vseller" title={i18n.t("ui.vseller.windowName", [])} width="450px" height="50px"
             x={this.props.uiModules.uiPosition.vseller.x} 
             y={this.props.uiModules.uiPosition.vseller.y}
             onPositionUpdated={(x,y) => {
@@ -48,7 +49,7 @@ class VSeller extends React.Component {
                                     <div className="ui-btn-small ui-btn-success" onClick={() => {
                                         this.setState({selectedVehicleId: e.modelId})
                                     }}>
-                                        Acheter ({e.price}$)
+                                        {i18n.t("ui.common.buy", [])} ({e.price}$)
                                     </div>
                                 </div>
                             </div>
@@ -71,7 +72,7 @@ class VSeller extends React.Component {
                     <br />
                     <div style={{ backgroundColor: this.state.selectedColor }} className={"ui-btn"}
                         onClick={() => { this.requestBuyVehicle() }}>
-                        Acheter le véhicule
+                        {i18n.t("ui.common.buy", [])}
                     </div>
                 </div> : null}
             </div>
@@ -82,7 +83,8 @@ class VSeller extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        vseller: state.vseller
+        vseller: state.vseller,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {

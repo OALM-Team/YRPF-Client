@@ -26,3 +26,9 @@ function CheckAmbiantSound(object)
     end
 end
 
+function Play2DSound(path, volume) 
+    SetSoundVolume(CreateSound(path), volume)
+end
+AddEvent("Play2DSound", Play2DSound)
+AddRemoteEvent("Sound:Play2DSound", Play2DSound)
+

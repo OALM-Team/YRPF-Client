@@ -3,6 +3,7 @@ import { UIWindow } from "../../components";
 import assets from "../../assets";
 import * as React from "react";
 import constants from "../../actions/constants";
+import * as i18n from "../../i18n";
 
 class VChest extends React.Component {
 
@@ -27,7 +28,7 @@ class VChest extends React.Component {
     }
 
     render() {
-        return <UIWindow type="vchest" title="Coffre du véhicule" width="450px" height="50px"
+        return <UIWindow type="vchest" title={i18n.t("ui.vchest.windowName", [])} width="450px" height="50px"
             x={this.props.uiModules.uiPosition.vchest.x} 
             y={this.props.uiModules.uiPosition.vchest.y}
             onPositionUpdated={(x,y) => {
@@ -52,7 +53,8 @@ class VChest extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        vchest: state.vchest
+        vchest: state.vchest,
+        _: state.i18n
     }
 }, (dispatch) => {
     return {
