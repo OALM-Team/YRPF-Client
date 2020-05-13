@@ -11,5 +11,6 @@ import BigMap from "./bigmap";
 import Death from "./death";
 import CharacterJob from "./characterjob";
 import Seller from "./seller";
+import LangSelector from "./langSelector";
 
-export { App, ATM, Inventory, Garage, VSeller, CustomCharacter, VChest, GameMap, XPBar, Death, BigMap, CharacterJob, Seller }
+export { App, ATM, Inventory, Garage, VSeller, CustomCharacter, VChest, GameMap, XPBar, Death, BigMap, CharacterJob, Seller, LangSelector }

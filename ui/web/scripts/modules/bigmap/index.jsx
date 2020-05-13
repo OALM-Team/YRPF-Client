@@ -22,7 +22,7 @@ class BigMap extends React.Component {
                 iconAnchor: [10, 10],
                 shadowSize: [0, 0],
                 className: '',
-                html: '<img id="player-cursor" src="' + assets.gamemap.playerCursor + '" width="20" />',
+                html: '<img id="player-cursor-bigmap" src="' + assets.gamemap.playerCursor + '" width="20" />',
                 
             })
         }
@@ -42,7 +42,7 @@ class BigMap extends React.Component {
     }
 
     componentDidUpdate() {
-        document.querySelector("#player-cursor").style.transform = "rotate(" + (this.props.map.heading + 90) + "deg)";
+        document.querySelector("#player-cursor-bigmap").style.transform = "rotate(" + (this.props.map.heading + 90) + "deg)";
     }
 
     componentDidMount() {
@@ -87,6 +87,7 @@ class BigMap extends React.Component {
                     <ImageOverlay url={assets.gamemap.map} bounds={[[0,0], [1943,2000]]} />
 
                     <Marker style={{transform: "rotate(" + (this.props.map.heading + 90) + "deg)"}} 
+                        zIndexOffset={300}
                         position={[this.worldToMapImgY(this.props.map.characterPosition.y), this.worldToMapImgX(this.props.map.characterPosition.x)]}
                         icon={this.state.playerIcon} />
 
