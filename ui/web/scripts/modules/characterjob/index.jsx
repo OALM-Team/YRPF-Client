@@ -40,10 +40,10 @@ class CharacterJob extends React.Component {
                             </div>
                             <div style={{paddingLeft: "10px"}}>
                                 <b>
-                                    {i18n.t("ui.characterJob.jobLevel_" + e.levelName.toLowerCase(), [])}
+                                    {i18n.t("ui.characterJob.jobLevel_" + e.levelName.toLowerCase().name.split(' ').join("_"), [])}
                                 </b>
                                 <div className="desc">
-                                    {i18n.t("ui.characterJob.jobDesc_" + e.jobId.toLowerCase(), [])}
+                                    {i18n.t("ui.characterJob.jobDesc_" + e.jobId.toLowerCase().name.split(' ').join("_"), [])}
                                 </div>
                                 <div className="progress-bar" style={{marginTop: "5px"}}>
                                     <div className="inner-bar" style={{ width: "100%"}}></div>
