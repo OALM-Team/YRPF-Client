@@ -1,0 +1,28 @@
+.state-window {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 16px;
+    position: fixed;
+    bottom: 20px;
+    text-align: center;
+    padding: 5px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    user-select: none;
+    pointer-events: none;
+}
+
+.item {
+    background-color: $successColor;
+    font-weight: bold;
+    min-width: 200px;
+    max-width: 400px;
+    padding: 5px;
+    border-radius: 10px;
+    color: darken($color: $successColor, $amount: 20%);
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid darken($color: $successColor, $amount: 20%);
+    margin-bottom: 5px;
+}

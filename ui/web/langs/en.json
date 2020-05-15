@@ -161,5 +161,9 @@
     "toast.job.requirement_unrespected": "You don't meet all requirements for this job",
     "toast.job.already_used": "This resource is already used",
     "toast.vehicle.no_space_left": "The vehicle trunk is full",
-    "toast.tool.already_used": "This tool is already used"
+    "toast.tool.already_used": "This tool is already used",
+    "toast.seller.no_enought_money_on_me": "You don't have the cash on you for x{0} {1}",
+    "toast.seller.success_buy": "You have buy x{0} {1}",
+    "toast.seller.no_enought_item_on_me": "You don't have x{0} {1} on you",
+    "toast.seller.sell_success": "You have sell x{0} {1}"
 }

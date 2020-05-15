@@ -52,6 +52,14 @@ $slotSize: 50px;
             border-radius: 20px;
         }
     }
+
+    .slot-selected {
+        background-color: $accentColor;
+
+        &:hover {
+            background-color: darken($accentColor, 10%);
+        }
+    }
 }
 
 .weight-bar {
