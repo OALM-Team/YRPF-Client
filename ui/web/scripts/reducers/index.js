@@ -8,5 +8,6 @@ import xpbar from "./xpbar";
 import characterjob from "./characterjob";
 import seller from "./seller";
 import i18n from "./i18n";
+import growboxmenu from "./growboxmenu";
 
-export { uiModules, inventory, garage, vseller, vchest, map, xpbar, characterjob, seller, i18n }
+export { uiModules, inventory, garage, vseller, vchest, map, xpbar, characterjob, seller, i18n, growboxmenu }

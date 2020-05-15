@@ -18,8 +18,10 @@ $uiText: #d8b000;
 @import './xpbar.scss';
 @import './characterjob.scss';
 @import './seller.scss';
+@import './statewindow.scss';
 
 body, html {
+    pointer-events: none;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -86,6 +88,19 @@ body, html {
     }
 }
 
+.ui-btn-error {
+    background-color: $errorColor;
+
+    &:hover {
+        background-color: darken($color: $errorColor, $amount: 10%);
+    }
+
+    &:active {
+        transform: scale(0.95);
+        background-color: darken($color: $errorColor, $amount: 15%);
+    }
+}
+
 
 .ui-btn-disabled {
     background-color: $disabledColor;
@@ -115,6 +130,7 @@ body, html {
         height: 20px;
         width: 50%;
         position: absolute;
+        transition: 0.2s;
     }
 
     span {

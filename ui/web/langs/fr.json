@@ -5,6 +5,7 @@
     "ui.common.buy": "Acheter",
     "ui.common.sell": "Vendre",
     "ui.common.xp": "XP",
+    "ui.common.destroy": "Détruire",
 
     "ui.characterCustom.windowName": "Création de personnage",
     "ui.characterCustom.name": "Prenom/Nom",
@@ -114,9 +115,11 @@
     "ui.characterJob.jobLevel_bucheron_debutant": "Bûcheron Débutant",
     "ui.characterJob.jobLevel_bucheron_en_herbe": "Bûcheron en Herbe",
     "ui.characterJob.jobLevel_eboueur": "Eboueur",
+    "ui.characterJob.jobLevel_livreur_en_camion": "Livreur en camion",
     "ui.characterJob.jobLevel_livreur_debutant": "Livreur Débutant",
     "ui.characterJob.jobLevel_mineur_debutant": "Mineur Débutant",
     "ui.characterJob.jobLevel_pecheur_debutant": "Pêcheur Débutant",
+    "ui.characterJob.jobLevel_cultivateur_de_weed": "Cultivateur de weed",
     "ui.characterJob.jobLevel_police": "Policier",
     "ui.characterJob.jobDesc_lumberjack": "Couper des arbres dans une forêt, et faites des planches pour les revendre à un meilleur prix",
     "ui.characterJob.jobDesc_garbage": "Ecumer la ville a la recherche d'ordure, ensuite allez à la déchetterie et mettez les dans une poubelle, ou recyclez-les",
@@ -124,20 +127,21 @@
     "ui.characterJob.jobDesc_miner": "Allez à la carrière et trouver des gisements de minerai à revendre pour un bon prix, avec de la chance vous trouverez le gros lot",
     "ui.characterJob.jobDesc_fisher": "Prenez votre bateau et naviguer à la recherche de balises en mer, ce sont des points de pêche",
     "ui.characterJob.jobDesc_police": "Vous faite regner l'ordre sur l'île, a vous de vous faire respecter et de faire respecter les lois",
+    "ui.characterJob.jobDesc_weed": "Vous faites pousser de la weed discrètement, et vous le revendez à des consommateurs ou à de gros dealers",
  
     "ui.seller.windowName": "Vendeur",
 
     "ui.vchest.windowName": "Coffre du véhicule",
 
-    "ui.item.desc_1": "Une pomme juteuse et pas chère",
-    "ui.item.desc_2": "De l'argent simplement",
-    "ui.item.desc_3": "Des cléfs de véhicule",
-    "ui.item.desc_4": "Une hache de bucheron classique",
-    "ui.item.desc_5": "Une pioche de mineur classique",
-    "ui.item.desc_6": "Une denrée rare sur cette île, c'est assez exotique et assez demandé sur l'île",
-    "ui.item.desc_7": "Une canne a pêche classique",
-    "ui.item.desc_8": "Du poisson assez commun",
- 
+    "ui.growboxmenu.windowName": "GrowBox",
+    "ui.growboxmenu_item.windowName": "Pot",
+    "ui.growboxmenu_item.progress": "Recoltable",
+    "ui.growboxmenu_item.water": "Eau",
+    "ui.growboxmenu_item.fill_water": "Ajouter de l'eau",
+    "ui.growboxmenu_item.take": "Prendre le pot",
+
+    "ui.statewindow.placement_validate": "Appuyer sur 'V' quand vous avez placer l'objet pour valider",
+
     "action.vehicle.locked": "Le véhicule est verrouillé",
     "action.vehicle.wearSomething": "Vous portez quelque chose",
 
@@ -149,6 +153,23 @@
     "item.name.6": "Banane",
     "item.name.7": "Canne à pêche",
     "item.name.8": "Saumon",
+    "item.name.9": "Sachet de graines de weed",
+    "item.name.10": "Ticket Livraison: Growbox",
+    "item.name.11": "Pot",
+    "item.name.12": "Bouteille d'eau",
+    
+    "ui.item.desc_1": "Une pomme juteuse et pas chère",
+    "ui.item.desc_2": "De l'argent simplement",
+    "ui.item.desc_3": "Des cléfs de véhicule",
+    "ui.item.desc_4": "Une hache de bucheron classique",
+    "ui.item.desc_5": "Une pioche de mineur classique",
+    "ui.item.desc_6": "Une denrée rare sur cette île, c'est assez exotique et assez demandé sur l'île",
+    "ui.item.desc_7": "Une canne a pêche classique",
+    "ui.item.desc_8": "Du poisson assez commun",
+    "ui.item.desc_9": "Un sachet qui contient des graines pour la culture de weed",
+    "ui.item.desc_10": "Ce ticket permet de vous faire livrer une growbox a un endroit",
+    "ui.item.desc_11": "Un pot de fleurs dans lequel on cultive des plantes",
+    "ui.item.desc_12": "Une simple bouteille d'eau",
 
     "toast.inventory.no_space_left": "Vous n'avez plus de place sur vous",
     "toast.vehicle.lock_off": "Véhicule {0} désormais déverrouillé",
@@ -180,5 +201,9 @@
     "toast.seller.no_enought_money_on_me": "Vous n'avez pas assez d'argent sur vous pour x{0} {1}",
     "toast.seller.success_buy": "Vous avez acheté x{0} {1}",
     "toast.seller.no_enought_item_on_me": "Vous n'avez pas x{0} {1} pour vendre",
-    "toast.seller.sell_success": "Vous avez vendu x{0} {1}"
+    "toast.seller.sell_success": "Vous avez vendu x{0} {1}",
+    "toast.placement.cancel_placement": "Le placement de l'objet a été annulé",
+    "toast.shipping.time_before_shipped": "Votre livraison arrivera dans {0}",
+    "toast.shipping.shipped": "Votre livraison est arrivé",
+    "toast.growbox.no_water": "Vous n'avez pas d'eau sur vous"
 }

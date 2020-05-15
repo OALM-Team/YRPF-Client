@@ -14,6 +14,8 @@ const initialState = {
     characterjob: false,
     seller: false,
     langSelector: false,
+    statewindow: false,
+    growboxmenu: false,
     uiPosition: {
         inventory: {x: 400, y: 250},
         atm: {x: 400, y: 50},
@@ -25,7 +27,8 @@ const initialState = {
         death: {x: 500, y: 200},
         characterjob: {x: 500, y: 200},
         seller: {x: 500, y: 200},
-        langSelector: {x: 500, y: 200}
+        langSelector: {x: 500, y: 200},
+        growboxmenu: {x: 500, y: 200}
     }
 }
 

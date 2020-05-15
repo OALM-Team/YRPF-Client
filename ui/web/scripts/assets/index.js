@@ -22,14 +22,19 @@ export default {
         "5": require("../../assets/icons/pickaxe.png"),
         "6": require("../../assets/icons/bananas.png"),
         "7": require("../../assets/icons/fishing_rod.png"),
-        "8": require("../../assets/icons/salmon.png")
+        "8": require("../../assets/icons/salmon.png"),
+        "9": require("../../assets/icons/weed_seed_1.png"),
+        "10": require("../../assets/icons/ticket_delivery_growbox.png"),
+        "11": require("../../assets/icons/pot.png"),
+        "12": require("../../assets/icons/water.png")
     },
     worlditems: {
         "50001": require("../../assets/worlditems/50001.png"),
         "1574": require("../../assets/worlditems/1574.png"),
         "514": require("../../assets/worlditems/514.png"),
         "508": require("../../assets/worlditems/508.png"),
-        "156": require("../../assets/worlditems/156.png")
+        "156": require("../../assets/worlditems/156.png"),
+        "554": require("../../assets/worlditems/554.png")
     },
     job: {
         icon_lumberjack: require("../../assets/job/icon_lumberjack.png"),
@@ -37,7 +42,8 @@ export default {
         icon_delivery: require("../../assets/job/icon_delivery.png"),
         icon_miner: require("../../assets/job/icon_miner.png"),
         icon_fisher: require("../../assets/job/icon_fisher.png"),
-        icon_police: require("../../assets/job/icon_police.png")
+        icon_police: require("../../assets/job/icon_police.png"),
+        icon_weed: require("../../assets/job/icon_weed.png")
     },
     vehicles: {
         "-1": require("../../assets/vehicles/-1.png"),

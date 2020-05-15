@@ -54,6 +54,9 @@ function UpdateCharacterPositionToUI()
     local x,y,z = GetPlayerLocation(GetPlayerId())
     local h = GetPlayerHeading(GetPlayerId())
     local _, ch = GetCameraRotation()
+    if ch == nil then
+        ch = 0
+    end
 
     ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "UPDATE_CHARACTER_POSITION", "x": '..x..', "y": '..y..'})')
     ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "UPDATE_CHARACTER_HEADING", "heading": '..h..', "cameraHeading": '..ch..'})')

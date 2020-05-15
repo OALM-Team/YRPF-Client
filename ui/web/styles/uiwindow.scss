@@ -1,5 +1,6 @@
 .uiwindow {
     position: fixed;
+    pointer-events: all;
 
     .header {
         background: $mainColor;
