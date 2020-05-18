@@ -66,7 +66,22 @@ class GrowboxMenu extends React.Component {
                         {i18n.t("ui.growboxmenu_item.fill_water", [])}
                     </div>
 
-                    <div className={"ui-btn ui-btn-error"} onClick={() => { }} style={{marginTop: "30px"}}>
+                    {!selectedItem.seed ? <div className={"ui-btn ui-btn-success"} onClick={() => { 
+                        window.CallEvent("RemoteCallInterface", "Growbox:FillSeedPot", JSON.stringify({growboxId: this.props.growboxmenu.selectedGrowboxId, potId: this.state.selectedItemId}))
+                    }} style={{marginTop: "5px"}}>
+                        {i18n.t("ui.growboxmenu_item.put_seed", [])}
+                    </div> : null}
+
+                    {selectedItem.state >= 100 ? <div className={"ui-btn ui-btn-success"} onClick={() => { 
+                        window.CallEvent("RemoteCallInterface", "Growbox:HarvestPot", JSON.stringify({growboxId: this.props.growboxmenu.selectedGrowboxId, potId: this.state.selectedItemId}))
+                    }} style={{marginTop: "5px"}}>
+                        {i18n.t("ui.growboxmenu_item.harvest", [])}
+                    </div> : null}
+                    
+
+                    <div className={"ui-btn ui-btn-error"} onClick={() => { 
+                        window.CallEvent("RemoteCallInterface", "Growbox:TakePot", JSON.stringify({growboxId: this.props.growboxmenu.selectedGrowboxId, potId: this.state.selectedItemId}))
+                    }} style={{marginTop: "20px"}}>
                         {i18n.t("ui.growboxmenu_item.take", [])}
                     </div>
                 </UIWindow> : null}

@@ -93,11 +93,6 @@ AddEvent("OnPlayerStreamIn", function(player)
     end
 end)
 
-function FreezePlayer()
-    SetIgnoreMoveInput(true)
-end
-AddRemoteEvent("Character:FreezePlayer", FreezePlayer)
-
 function UnFreezePlayer()
     SetIgnoreMoveInput(false)
 end

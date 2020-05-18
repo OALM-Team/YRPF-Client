@@ -7,7 +7,8 @@ const initialState = {
             id: "x",
             itemId: "554",
             water: 60,
-            state: 50
+            state: 50,
+            seed: false
         }
     ]
 }
@@ -28,8 +29,9 @@ export default (state, action) => {
             if(itemExisting != null) {
                 itemExisting.water = action.water;
                 itemExisting.state = action.state;
+                itemExisting.seed = action.seed;
             } else {
-                state.items.push({id: action.id, itemId: action.itemId, water: action.water, state: action.state});
+                state.items.push({id: action.id, itemId: action.itemId, water: action.water, state: action.state, seed: action.seed});
             }
             return {...state, items: state.items}
 
@@ -37,6 +39,7 @@ export default (state, action) => {
             let item = state.items.find(x => x.id == action.id);
             item.water = action.water;
             item.state = action.state;
+            item.seed = action.seed;
             return { ...state, items: [...state.items] }
 
         default: return state;

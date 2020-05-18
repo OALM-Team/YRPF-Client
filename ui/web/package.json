@@ -25,6 +25,7 @@
     "jquery-ui-bundle": "^1.12.1-migrate",
     "leaflet": "^1.6.0",
     "react": "^16.13.1",
+    "react-circular-progressbar": "^2.0.3",
     "react-color": "^2.18.0",
     "react-context-menu": "^3.0.2",
     "react-contextmenu": "^2.13.0",

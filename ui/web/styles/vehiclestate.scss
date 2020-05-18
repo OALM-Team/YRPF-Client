@@ -1,0 +1,19 @@
+.vehicle-state {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 120px;
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .speed-counter {
+        font-family: 'Aldo the Apache';
+        width: 50px;
+        display: inline-block;
+    }
+}
