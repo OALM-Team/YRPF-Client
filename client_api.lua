@@ -48,12 +48,9 @@ function UpdateVehicleState()
 		local speed = math.floor(GetVehicleForwardSpeed(vehicle))
         local rpm = math.floor(GetVehicleEngineRPM(vehicle))
         local lightState = tostring(GetVehicleLightState(vehicle))
+        local fuel = GetVehiclePropertyValue(vehicle, "fuel")
         
-        if speed < 0 then
-		    ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "SET_VEHICLE_STATE", "visible": true, "currentMph": '..speed..', "lightState": '..lightState..', "fuel": 60})')
-        else
-		    ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "SET_VEHICLE_STATE", "visible": true, "currentMph": '..speed..', "lightState": '..lightState..', "fuel": 60})')
-        end
+		ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "SET_VEHICLE_STATE", "visible": true, "currentMph": '..speed..', "lightState": '..lightState..', "fuel": '..fuel..'})')
     else
         ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "SET_VEHICLE_STATE", "visible": false, "currentMph": 0})')
 	end
@@ -160,3 +157,11 @@ function GetI18NText(key)
     end
     return key
 end
+
+function TriggerLoadLevel() 
+    UpdateStreamingLevels()
+    Delay(50, function()
+        UpdateStreamingLevels()
+    end)
+end
+AddRemoteEvent("Game:TriggerLoadLevel", TriggerLoadLevel)

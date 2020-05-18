@@ -49,7 +49,7 @@ class VehicleState extends React.Component {
                     </div>
                 </div>
                 <div style={{marginLeft: "60px", display: "inline-block"}}>
-                    <BlubbleProgress icon={faGasPump} value={50} />
+                    <BlubbleProgress icon={faGasPump} value={this.props.vehiclestate.fuel} />
                 </div>
             </div>
         </div>

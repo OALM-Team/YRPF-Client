@@ -70,7 +70,7 @@ class BigMap extends React.Component {
     }
 
     render() {
-        return <UIWindow type="customCharacter" title={i18n.t("ui.bigmap.windowName", [])} width="550px" height="350px"
+        return <UIWindow type="customCharacter" title={i18n.t("ui.bigmap.windowName", [])} width="700px" height="600px"
         x={this.props.uiModules.uiPosition.bigmap.x} 
         y={this.props.uiModules.uiPosition.bigmap.y}
         onPositionUpdated={(x,y) => {

@@ -14,7 +14,8 @@ import Seller from "./seller";
 import LangSelector from "./langSelector";
 import StateWindow from "./statewindow";
 import GrowboxMenu from "./growboxmenu";
-import VehicleState from "./VehicleState";
+import VehicleState from "./vehiclestate";
+import FoodBar from "./foodbar";
 
 export { 
     App,
@@ -33,5 +34,6 @@ export {
     LangSelector, 
     StateWindow, 
     GrowboxMenu,
-    VehicleState
+    VehicleState,
+    FoodBar
 }

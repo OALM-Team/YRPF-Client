@@ -12,7 +12,9 @@ export default {
         icon_miner_seller: require("../../assets/gamemap/icon_miner_seller.png"),
         icon_fisher_seller: require("../../assets/gamemap/icon_fisher_seller.png"),
         icon_atm: require("../../assets/gamemap/icon_atm.png"),
-        icon_vseller: require("../../assets/gamemap/icon_vseller.png")
+        icon_vseller: require("../../assets/gamemap/icon_vseller.png"),
+        icon_hopital: require("../../assets/gamemap/icon_hopital.png"),
+        icon_police: require("../../assets/gamemap/icon_police.png")
     },
     items: {
         "1": require("../../assets/icons/apple.png"),
@@ -31,7 +33,8 @@ export default {
         "14": require("../../assets/icons/ticket_delivery_generator.png"),
         "15": require("../../assets/icons/jerrican_fuel.png"),
         "16": require("../../assets/icons/cuff.png"),
-        "17": require("../../assets/icons/defibrilator.png")
+        "17": require("../../assets/icons/defibrilator.png"),
+        "18": require("../../assets/icons/ls.png")
     },
     worlditems: {
         "50001": require("../../assets/worlditems/50001.png"),
@@ -48,7 +51,8 @@ export default {
         icon_miner: require("../../assets/job/icon_miner.png"),
         icon_fisher: require("../../assets/job/icon_fisher.png"),
         icon_police: require("../../assets/job/icon_police.png"),
-        icon_weed: require("../../assets/job/icon_weed.png")
+        icon_weed: require("../../assets/job/icon_weed.png"),
+        icon_ems: require("../../assets/job/icon_ems.png")
     },
     vehicles: {
         "-1": require("../../assets/vehicles/-1.png"),
