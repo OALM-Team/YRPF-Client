@@ -120,6 +120,7 @@
     "ui.characterJob.jobLevel_mineur_debutant": "Mineur Débutant",
     "ui.characterJob.jobLevel_pecheur_debutant": "Pêcheur Débutant",
     "ui.characterJob.jobLevel_cultivateur_de_weed": "Cultivateur de weed",
+    "ui.characterJob.jobLevel_medecin": "Médecin",
     "ui.characterJob.jobLevel_police": "Policier",
     "ui.characterJob.jobDesc_lumberjack": "Couper des arbres dans une forêt, et faites des planches pour les revendre à un meilleur prix",
     "ui.characterJob.jobDesc_garbage": "Ecumer la ville a la recherche d'ordure, ensuite allez à la déchetterie et mettez les dans une poubelle, ou recyclez-les",
@@ -128,6 +129,7 @@
     "ui.characterJob.jobDesc_fisher": "Prenez votre bateau et naviguer à la recherche de balises en mer, ce sont des points de pêche",
     "ui.characterJob.jobDesc_police": "Vous faite regner l'ordre sur l'île, a vous de vous faire respecter et de faire respecter les lois",
     "ui.characterJob.jobDesc_weed": "Vous faites pousser de la weed discrètement, et vous le revendez à des consommateurs ou à de gros dealers",
+    "ui.characterJob.jobDesc_ems": "Vous êtes un pilier de la société, on compte sur vous pour la santé des habitants de l'île",
  
     "ui.seller.windowName": "Vendeur",
 
@@ -163,6 +165,8 @@
     "item.name.14": "Ticket Livraison: Generateur",
     "item.name.15": "Jerrican d'essence",
     "item.name.16": "Menottes",
+    "item.name.17": "Défibrilateur",
+    "item.name.18": "Sabre laser",
     
     "ui.item.desc_1": "Une pomme juteuse et pas chère",
     "ui.item.desc_2": "De l'argent simplement",
@@ -180,6 +184,8 @@
     "ui.item.desc_14": "Ce ticket permet de vous faire livrer un générateur a un endroit",
     "ui.item.desc_15": "Contient de l'essence pour tout type de machines",
     "ui.item.desc_16": "Permet de limiter les actions d'une personne",
+    "ui.item.desc_17": "Permet de réanimer une personne",
+    "ui.item.desc_18": "Pour faire joujou",
 
     "toast.inventory.no_space_left": "Vous n'avez plus de place sur vous",
     "toast.vehicle.lock_off": "Véhicule {0} désormais déverrouillé",

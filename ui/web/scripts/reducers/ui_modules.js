@@ -16,6 +16,7 @@ const initialState = {
     langSelector: false,
     statewindow: false,
     growboxmenu: false,
+    foodbar: true,
     uiPosition: {
         inventory: {x: 400, y: 250},
         atm: {x: 400, y: 50},
