@@ -3,12 +3,21 @@ I18N = {}
 
 function OnPackageStart()
     CreateTimer(function()
+        UpdateVehicleState()
+    end, 150)
+
+    CreateTimer(function()
         UpdateCharacterPositionToUI()
     end, 1000 / 60) 
 end
 AddEvent("OnPackageStart", OnPackageStart)
 
 AddEvent("OnPlayerStartEnterVehicle", function(vehicleId, seatId)
+    if GetPlayerPropertyValue(GetPlayerId(), "cuffed") == 1 then
+        SendLocalToast("error", GetI18NText("toast.cuffed.you_are_cuff"))
+        return false 
+    end
+
     if GetVehiclePropertyValue(vehicleId, "locked") == 1 then
         SendLocalToast("error", GetI18NText("action.vehicle.locked"))
         return false 
@@ -31,6 +40,24 @@ AddEvent("OnNPCStreamIn", function(npc)
         SetNPCClothingPreset(npc, GetNPCPropertyValue(npc, "clothing"))
     end
 end)
+
+function UpdateVehicleState()
+    local vehicle = GetPlayerVehicle(GetPlayerId())
+    
+	if vehicle ~= 0 and vehicle ~= nil and vehicle ~= '0' then
+		local speed = math.floor(GetVehicleForwardSpeed(vehicle))
+        local rpm = math.floor(GetVehicleEngineRPM(vehicle))
+        local lightState = tostring(GetVehicleLightState(vehicle))
+        
+        if speed < 0 then
+		    ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "SET_VEHICLE_STATE", "visible": true, "currentMph": '..speed..', "lightState": '..lightState..', "fuel": 60})')
+        else
+		    ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "SET_VEHICLE_STATE", "visible": true, "currentMph": '..speed..', "lightState": '..lightState..', "fuel": 60})')
+        end
+    else
+        ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "SET_VEHICLE_STATE", "visible": false, "currentMph": 0})')
+	end
+end
 
 function SetPickupColor(pickup, HexColor)
 	local color = "0x" .. HexColor

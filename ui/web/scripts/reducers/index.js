@@ -9,5 +9,6 @@ import characterjob from "./characterjob";
 import seller from "./seller";
 import i18n from "./i18n";
 import growboxmenu from "./growboxmenu";
+import vehiclestate from "./vehiclestate";
 
-export { uiModules, inventory, garage, vseller, vchest, map, xpbar, characterjob, seller, i18n, growboxmenu }
+export { uiModules, inventory, garage, vseller, vchest, map, xpbar, characterjob, seller, i18n, growboxmenu, vehiclestate }

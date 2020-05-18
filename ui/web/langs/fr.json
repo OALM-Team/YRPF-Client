@@ -135,10 +135,12 @@
 
     "ui.growboxmenu.windowName": "GrowBox",
     "ui.growboxmenu_item.windowName": "Pot",
-    "ui.growboxmenu_item.progress": "Recoltable",
+    "ui.growboxmenu_item.progress": "Progression",
     "ui.growboxmenu_item.water": "Eau",
     "ui.growboxmenu_item.fill_water": "Ajouter de l'eau",
     "ui.growboxmenu_item.take": "Prendre le pot",
+    "ui.growboxmenu_item.put_seed": "Planter une graine",
+    "ui.growboxmenu_item.harvest": "Récolter",
 
     "ui.statewindow.placement_validate": "Appuyer sur 'V' quand vous avez placer l'objet pour valider",
 
@@ -157,6 +159,10 @@
     "item.name.10": "Ticket Livraison: Growbox",
     "item.name.11": "Pot",
     "item.name.12": "Bouteille d'eau",
+    "item.name.13": "Sachet de weed",
+    "item.name.14": "Ticket Livraison: Generateur",
+    "item.name.15": "Jerrican d'essence",
+    "item.name.16": "Menottes",
     
     "ui.item.desc_1": "Une pomme juteuse et pas chère",
     "ui.item.desc_2": "De l'argent simplement",
@@ -170,6 +176,10 @@
     "ui.item.desc_10": "Ce ticket permet de vous faire livrer une growbox a un endroit",
     "ui.item.desc_11": "Un pot de fleurs dans lequel on cultive des plantes",
     "ui.item.desc_12": "Une simple bouteille d'eau",
+    "ui.item.desc_13": "Un sachat de weed a revendre a un dealer",
+    "ui.item.desc_14": "Ce ticket permet de vous faire livrer un générateur a un endroit",
+    "ui.item.desc_15": "Contient de l'essence pour tout type de machines",
+    "ui.item.desc_16": "Permet de limiter les actions d'une personne",
 
     "toast.inventory.no_space_left": "Vous n'avez plus de place sur vous",
     "toast.vehicle.lock_off": "Véhicule {0} désormais déverrouillé",
@@ -205,5 +215,8 @@
     "toast.placement.cancel_placement": "Le placement de l'objet a été annulé",
     "toast.shipping.time_before_shipped": "Votre livraison arrivera dans {0}",
     "toast.shipping.shipped": "Votre livraison est arrivé",
-    "toast.growbox.no_water": "Vous n'avez pas d'eau sur vous"
+    "toast.growbox.no_water": "Vous n'avez pas d'eau sur vous",
+    "toast.growbox.no_seed": "Vous n'avez pas de graines sur vous",
+    "toast.generator.no_fuel": "Le générateur n'a plus d'essences",
+    "toast.cuffed.you_are_cuff": "Vous êtes menotté"
 }

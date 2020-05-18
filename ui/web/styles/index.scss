@@ -19,6 +19,7 @@ $uiText: #d8b000;
 @import './characterjob.scss';
 @import './seller.scss';
 @import './statewindow.scss';
+@import './vehiclestate.scss';
 
 body, html {
     pointer-events: none;
@@ -143,9 +144,32 @@ body, html {
     }
 }
 
-/*
- *  STYLE 4
- */
+.bubble-progress {
+    text-align: center;
+    border-radius: 30px;
+    padding: 15px;
+    color: white;
+    background-color: gray;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    min-width: 15px;
+
+    .progress {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 50%;
+        background-color: $accentColor;
+        z-index: 1;
+    }
+
+    .icon {
+        position: relative;
+        z-index: 2;
+    }
+}
 
 ::-webkit-scrollbar-track
 {

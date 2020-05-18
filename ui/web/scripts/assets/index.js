@@ -26,7 +26,12 @@ export default {
         "9": require("../../assets/icons/weed_seed_1.png"),
         "10": require("../../assets/icons/ticket_delivery_growbox.png"),
         "11": require("../../assets/icons/pot.png"),
-        "12": require("../../assets/icons/water.png")
+        "12": require("../../assets/icons/water.png"),
+        "13": require("../../assets/icons/weed.png"),
+        "14": require("../../assets/icons/ticket_delivery_generator.png"),
+        "15": require("../../assets/icons/jerrican_fuel.png"),
+        "16": require("../../assets/icons/cuff.png"),
+        "17": require("../../assets/icons/defibrilator.png")
     },
     worlditems: {
         "50001": require("../../assets/worlditems/50001.png"),
