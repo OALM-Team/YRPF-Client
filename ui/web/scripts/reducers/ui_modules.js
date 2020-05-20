@@ -17,6 +17,7 @@ const initialState = {
     statewindow: false,
     growboxmenu: false,
     foodbar: true,
+    phone: true,
     uiPosition: {
         inventory: {x: 400, y: 250},
         atm: {x: 400, y: 50},
@@ -29,7 +30,8 @@ const initialState = {
         characterjob: {x: 500, y: 200},
         seller: {x: 500, y: 200},
         langSelector: {x: 500, y: 200},
-        growboxmenu: {x: 500, y: 200}
+        growboxmenu: {x: 500, y: 200},
+        phone: {x: 500, y: 200}
     }
 }
 

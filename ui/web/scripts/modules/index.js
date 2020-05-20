@@ -16,6 +16,7 @@ import StateWindow from "./statewindow";
 import GrowboxMenu from "./growboxmenu";
 import VehicleState from "./vehiclestate";
 import FoodBar from "./foodbar";
+import Phone from "./phone";
 
 export { 
     App,
@@ -35,5 +36,6 @@ export {
     StateWindow, 
     GrowboxMenu,
     VehicleState,
-    FoodBar
+    FoodBar,
+    Phone
 }
