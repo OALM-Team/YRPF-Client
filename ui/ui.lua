@@ -34,6 +34,12 @@ AddEvent("OnKeyPress", function(key)
     if key == "J" then
         CallRemoteEvent("Job:CharacterJobRequest")
     end
+    if key == "F1" then
+        CallRemoteEvent("GlobalUI:ToogleWindow", "phone")
+    end
+    if key == "H" and IsCtrlPressed() then
+        CallRemoteEvent("House:RequestHouseMenu")
+    end
 end)
 
 AddEvent("SetInputMode", function(mode)

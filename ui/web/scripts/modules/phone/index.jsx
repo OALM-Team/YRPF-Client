@@ -2,10 +2,9 @@ import { connect } from "react-redux";
 import assets from "../../assets";
 import * as React from "react";
 import constants from "../../actions/constants";
-import {
-    BrowserRouter as Router,
-} from "react-router-dom";
 import PhoneNavigation from "./phoneNavigation";
+import { BlubbleProgress } from "../../components";
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 class Phone extends React.Component {
 
@@ -17,23 +16,23 @@ class Phone extends React.Component {
     }
 
     componentDidMount() {
-
+        window.CallEvent("SetInputMode", 1)
     }
 
     componentWillUnmount() {
-
+        window.CallEvent("SetInputMode", 0)
     }
 
     render() {
         return <div id="phone" className="animated slideInUp">
+            <div onClick={() => { window.CallEvent("RequestToogleUI", "phone") }} style={{position: "absolute", top: "-50px", right: "0px", cursor: "pointer", zIndex: "100", pointerEvents: "all"}}>
+                <BlubbleProgress icon={faTimes} value={0} />
+            </div>
             <div id="phone-background"></div>
             <div id="phone-anchor"></div>
             <div id="status-bar"></div>
             <div id="screen">
-                <Router>
-                    <PhoneNavigation />
-                    
-                </Router>
+                <PhoneNavigation />
             </div>
         </div>
     }

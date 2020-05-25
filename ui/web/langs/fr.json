@@ -148,6 +148,8 @@
 
     "action.vehicle.locked": "Le véhicule est verrouillé",
     "action.vehicle.wearSomething": "Vous portez quelque chose",
+    
+    "ui.houseBuy.windowName": "Acheter une maison",
 
     "item.name.1": "Pomme",
     "item.name.2": "Cash",
@@ -224,5 +226,11 @@
     "toast.growbox.no_water": "Vous n'avez pas d'eau sur vous",
     "toast.growbox.no_seed": "Vous n'avez pas de graines sur vous",
     "toast.generator.no_fuel": "Le générateur n'a plus d'essences",
-    "toast.cuffed.you_are_cuff": "Vous êtes menotté"
+    "toast.cuffed.you_are_cuff": "Vous êtes menotté",
+    "toast.phone.you_have_received_message": "Vous avez reçu un message du {0}",
+    "toast.house.no_enought_money_on_me": "Vous n'avez pas assez d'argent sur vous",
+    "toast.house.already_buy": "Cette propriété est déjà acheter",
+    "toast.house.success_buy": "Félicitation cette propriété est à vous désormais !",
+    "toast.house.need_to_be_inside": "Vous avez besoin d'être dans une de vos propriété pour poser des objets",
+    "toast.house.dont_own_it": "Cette propriété vous appartient pas"
 }

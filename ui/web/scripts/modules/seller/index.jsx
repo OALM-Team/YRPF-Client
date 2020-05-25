@@ -60,7 +60,7 @@ class Seller extends React.Component {
             window.CallEvent("RemoteCallInterface", "Seller:BuySellItem", JSON.stringify({id: item.id, quantity: item.quantity}))
         }
         window.CallEvent("RequestToogleUI", "seller")
-        window.CallEvent("Play2DSound", "sounds/cash_register.mp3", 0.2)
+        window.CallEvent("Play2DSound", "sounds/cash_register.mp3", 1)
     }
 
     render() {
