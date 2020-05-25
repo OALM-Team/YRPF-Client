@@ -4,9 +4,6 @@ import * as React from "react";
 import constants from "../../../actions/constants";
 import { faPhoneAlt, faEnvelope, faLifeRing, faHeadset, faBook, faMap } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    Link
-} from "react-router-dom";
 
 class Homepage extends React.Component {
 
@@ -16,9 +13,10 @@ class Homepage extends React.Component {
             
         }
     }
-
+    
     componentDidMount() {
-        
+        window.CallEvent("SetInputMode", 1)
+        window.CallEvent("RemoteCallInterface", "Phone:RequestContacts");
     }
 
     componentWillUnmount() {
@@ -29,34 +27,21 @@ class Homepage extends React.Component {
         return <div className="wallpaper">
             <div className="homepage">
                 <div style={{padding: "5px"}}>
-                    <Link to="/contacts">
-                        <div className="app-icon app-icon-yellow">
-                            <FontAwesomeIcon icon={faBook} />
-                            <div className="text">
-                                Contacts
-                            </div>
+                    <div className="app-icon app-icon-yellow" onClick={() => this.props.setPhoneScreen("contacts")}>
+                        <FontAwesomeIcon icon={faBook} />
+                        <div className="text">
+                            Contacts
                         </div>
-                    </Link>
-
-                    <Link to="/gamemap">
-                        <div className="app-icon app-icon-blue">
-                            <FontAwesomeIcon icon={faMap} />
-                            <div className="text">
-                                Carte
-                            </div>
-                        </div>
-                    </Link>
+                    </div>
                 </div>
 
                 
 
                 <div style={{position: "absolute", bottom: "30px", left: "0px", right: "0px", textAlign: "center"}}>
-                    <Link to="/call">
-                        <div className="app-icon app-icon-green">
-                            <FontAwesomeIcon icon={faPhoneAlt} />
-                        </div>
-                    </Link>
-                    <div className="app-icon app-icon-blue">
+                    <div className="app-icon app-icon-green" onClick={() => this.props.setPhoneScreen("call")}>
+                        <FontAwesomeIcon icon={faPhoneAlt} />
+                    </div>
+                    <div className="app-icon app-icon-blue" onClick={() => this.props.setPhoneScreen("message-list")}>
                         <FontAwesomeIcon icon={faEnvelope} />
                     </div>
                     <div className="app-icon app-icon-red">
@@ -74,10 +59,11 @@ class Homepage extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        _: state.i18n
+        _: state.i18n,
+        phone: state.phone
     }
 }, (dispatch) => {
     return {
-        
+        setPhoneScreen: (screen) => dispatch({type: constants.SET_PHONE_SCREEN, currentScreen: screen}),
     }
 })(Homepage);

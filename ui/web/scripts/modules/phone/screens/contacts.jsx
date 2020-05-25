@@ -4,9 +4,6 @@ import * as React from "react";
 import constants from "../../../actions/constants";
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    Link
-} from "react-router-dom";
 
 class Contacts extends React.Component {
 
@@ -16,9 +13,11 @@ class Contacts extends React.Component {
             
         }
     }
-
+    
     componentDidMount() {
-        
+        this.props.resetContacts();
+        window.CallEvent("RemoteCallInterface", "Phone:RequestContacts");
+        window.CallEvent("SetInputMode", 1)
     }
 
     componentWillUnmount() {
@@ -32,15 +31,13 @@ class Contacts extends React.Component {
             </div>
             <div className="app-container contacts-screen">
                 {this.props.phone.contacts.map((e,i) => {
-                    return <Link to={"/message/"+ e.number} key={i}>
-                        <div className="contact-item">
-                            <div className="letter-circle">{e.name[0].toUpperCase()}</div>
-                            <div className="contact-name">{e.name}</div>
-                        </div>
-                    </Link>
+                    return <div className="contact-item" key={i} onClick={() => this.props.setPhoneScreen("message", e.number)}>
+                        <div className="letter-circle">{e.name[0].toUpperCase()}</div>
+                        <div className="contact-name">{e.name}</div>
+                    </div>
                 })}
             </div>
-            <div className="bubble-bt app-icon-yellow">
+            <div className="bubble-bt app-icon-yellow" onClick={() => this.props.setPhoneScreen("addContact")}>
                 <FontAwesomeIcon icon={faPlus} />
             </div>
         </div>
@@ -55,6 +52,7 @@ export default connect((state, ownProps) => {
     }
 }, (dispatch) => {
     return {
-        
+        setPhoneScreen: (screen, params) => dispatch({type: constants.SET_PHONE_SCREEN, currentScreen: screen, params: params}),
+        resetContacts: () => dispatch({type: constants.RESET_CONTACTS})
     }
 })(Contacts);

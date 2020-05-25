@@ -16,9 +16,13 @@ class Call extends React.Component {
             
         }
     }
+    
+    componentDidUpdate() {
+        window.CallEvent("SetInputMode", 1)
+    }
 
     componentDidMount() {
-        
+        window.CallEvent("SetInputMode", 1)
     }
 
     componentWillUnmount() {
