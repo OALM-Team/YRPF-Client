@@ -6,6 +6,21 @@
     bottom: 100px;
     font-family: "Roboto";
 
+    ::-webkit-scrollbar-track
+    {
+        background-color: rgba(0, 0, 0, 0.164);
+    }
+
+    ::-webkit-scrollbar
+    {
+        width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb
+    {
+        background-color: #00000041;
+    }
+
     #phone-background {
         background-image: url(../assets/phone/phone.png);
         background-size: cover;

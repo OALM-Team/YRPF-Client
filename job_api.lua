@@ -1,6 +1,7 @@
 CurrentEditMode = 1
 InEditMode = false
 CurrentEditedObject = nil
+SelectMode = false
 
 function OnPackageStart()
     CreateTimer(function()
@@ -159,17 +160,49 @@ function SubmitEditableObjectPlacement()
     local x, y, z = GetObjectLocation(CurrentEditedObject)
     local rx, ry, rz = GetObjectRotation(CurrentEditedObject)
     CallRemoteEvent("Object:EditPlacementDone", x,y,z,rx,ry,rz)
+    if SelectMode then
+        ToogleSelectState()
+    end
+end
+
+function ToogleSelectState()
+    if SelectMode then
+        SetInputMode(0)
+        EnableFirstPersonCamera(false)
+        ShowMouseCursor(false)
+        SelectMode = false
+        SetNearClipPlane(0)
+    else
+        SetInputMode(1)
+        EnableFirstPersonCamera(true)
+        ShowMouseCursor(true)
+        SelectMode = true
+        SetNearClipPlane(15)
+    end
 end
 
 AddEvent("OnKeyPress", function(key)
-    -- Lock toogle vehicle
-    if(key == "E" and GetNearbyWearableObject() ~= nil) then
-        CallRemoteEvent("Job:WearObject", GetObjectPropertyValue(GetNearbyWearableObject(), "uuid"))
-    elseif(key == "E" and GetNearbyJobToolObject() ~= nil) then
-        CallRemoteEvent("Object:Interact")
-        CallRemoteEvent("Job:UseJobTool", GetObjectPropertyValue(GetNearbyJobToolObject(), "uuid"))
-    elseif key == "E" and GetNearbyWearableObject() == nil then
-        CallRemoteEvent("Object:Interact")
+    if not IsCtrlPressed() then
+        if(key == "E" and GetNearbyWearableObject() ~= nil) then
+            CallRemoteEvent("Job:WearObject", GetObjectPropertyValue(GetNearbyWearableObject(), "uuid"))
+        elseif(key == "E" and GetNearbyJobToolObject() ~= nil) then
+            CallRemoteEvent("Object:Interact")
+            CallRemoteEvent("Job:UseJobTool", GetObjectPropertyValue(GetNearbyJobToolObject(), "uuid"))
+        elseif key == "E" and GetNearbyWearableObject() == nil then
+            CallRemoteEvent("Object:Interact")
+        end
+    else -- ctrl pressed
+        if(key == "E") then
+            ToogleSelectState()
+        end
+    end
+
+    -- Select object to edit
+    if SelectMode and key == 'Left Mouse Button' and not InEditMode then
+        local EntityType, EntityId = GetMouseHitEntity()
+        if IsValidObject(EntityId) and EntityType == HIT_OBJECT and GetObjectPropertyValue(EntityId, "houseItemId") ~= nil then
+            CallRemoteEvent("Object:EditExistingPlacement", GetObjectPropertyValue(EntityId, "houseItemId"))
+        end
     end
 
     -- Rotate or Move

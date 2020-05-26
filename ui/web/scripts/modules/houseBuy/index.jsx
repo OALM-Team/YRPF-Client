@@ -16,7 +16,7 @@ class HouseBuy extends React.Component {
     }
 
     componentDidMount() {
-        window.CallEvent("SetInputMode", 2)
+        window.CallEvent("SetInputMode", 1)
         window.CallEvent("Play2DSound", "sounds/shop_bell.mp3", 1)
     }
 
