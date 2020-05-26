@@ -1,6 +1,8 @@
 import constants from "../actions/constants";
 import { toast } from 'react-toastify';
 
+console.log();
+
 const initialState = {
     inventory: false,
     atm: false,
@@ -17,7 +19,7 @@ const initialState = {
     statewindow: false,
     growboxmenu: false,
     foodbar: true,
-    phone: false,
+    phone: process.env.NODE_ENV == "development" ? true : false,
     houseBuy: false,
     uiPosition: {
         inventory: {x: 400, y: 250},

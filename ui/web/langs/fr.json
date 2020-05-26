@@ -232,5 +232,7 @@
     "toast.house.already_buy": "Cette propriété est déjà acheter",
     "toast.house.success_buy": "Félicitation cette propriété est à vous désormais !",
     "toast.house.need_to_be_inside": "Vous avez besoin d'être dans une de vos propriété pour poser des objets",
-    "toast.house.dont_own_it": "Cette propriété vous appartient pas"
+    "toast.house.dont_own_it": "Cette propriété vous appartient pas",
+    "toast.house.doors_locked": "Les portes sont désormais fermer",
+    "toast.house.doors_unlocked": "Les portes sont désormais ouverte"
 }

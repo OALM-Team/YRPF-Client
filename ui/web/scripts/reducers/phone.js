@@ -1,7 +1,7 @@
 import constants from "../actions/constants";
 
 const initialState = {
-    currentScreen: "homepage",
+    currentScreen: "item-shop",
     phoneNumber: "0788253614",
     currentScreenParam: null,
     contacts: [

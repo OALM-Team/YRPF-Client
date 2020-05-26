@@ -9,6 +9,7 @@ import Message from "./screens/message";
 import MessageList from "./screens/message-list";
 import Contacts from "./screens/contacts";
 import AddContacts from "./screens/addContact";
+import ItemShop from "./screens/item-shop";
 import {
     TransitionGroup,
     CSSTransition
@@ -55,6 +56,8 @@ class PhoneNavigation extends React.Component {
                                 return <MessageList />;
                             case "addContact":
                                 return <AddContacts />;
+                            case "item-shop":
+                                return <ItemShop />;
                             default: return null;
                         }
                     })()}
