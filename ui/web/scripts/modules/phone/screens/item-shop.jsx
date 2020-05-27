@@ -23,6 +23,10 @@ class ItemShop extends React.Component {
 
     }
 
+    handleClickItem(item) {
+        window.CallEvent("RemoteCallInterface", "Phone:RequestBuyItemShop", item.modelId);
+    }
+
     render() {
         return <div>
             <div className="app-bar app-icon-blue">
@@ -31,7 +35,7 @@ class ItemShop extends React.Component {
             <div className="app-container item-shop-screen">
                 <div className="item-shop-list-container">
                     {this.state.items.sort((a,b) => a.price - b.price).map((e, i) => {
-                        return <div key={i} className="item-shop-item">
+                        return <div key={i} className="item-shop-item" onClick={() => this.handleClickItem(e)}>
                             <img src={process.env.NODE_ENV == "development" ? "https://dev.playonset.com/images/objects-static/" + e.modelId + ".jpg" : "http://game/objects/" + e.modelId} />
                             <div className="price">
                                 {e.price}$

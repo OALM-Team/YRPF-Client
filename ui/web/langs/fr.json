@@ -169,6 +169,8 @@
     "item.name.16": "Menottes",
     "item.name.17": "Défibrilateur",
     "item.name.18": "Sabre laser",
+    "item.name.19": "Desert Eagle",
+    "item.name.20": "Munitions",
     
     "ui.item.desc_1": "Une pomme juteuse et pas chère",
     "ui.item.desc_2": "De l'argent simplement",
@@ -188,6 +190,8 @@
     "ui.item.desc_16": "Permet de limiter les actions d'une personne",
     "ui.item.desc_17": "Permet de réanimer une personne",
     "ui.item.desc_18": "Pour faire joujou",
+    "ui.item.desc_19": "Arme: Desert Eagle",
+    "ui.item.desc_20": "Munitions pour armes",
 
     "toast.inventory.no_space_left": "Vous n'avez plus de place sur vous",
     "toast.vehicle.lock_off": "Véhicule {0} désormais déverrouillé",
@@ -222,17 +226,19 @@
     "toast.seller.sell_success": "Vous avez vendu x{0} {1}",
     "toast.placement.cancel_placement": "Le placement de l'objet a été annulé",
     "toast.shipping.time_before_shipped": "Votre livraison arrivera dans {0}",
-    "toast.shipping.shipped": "Votre livraison est arrivé",
+    "toast.shipping.shipped": "Votre livraison est arrivée",
     "toast.growbox.no_water": "Vous n'avez pas d'eau sur vous",
     "toast.growbox.no_seed": "Vous n'avez pas de graines sur vous",
     "toast.generator.no_fuel": "Le générateur n'a plus d'essences",
     "toast.cuffed.you_are_cuff": "Vous êtes menotté",
     "toast.phone.you_have_received_message": "Vous avez reçu un message du {0}",
     "toast.house.no_enought_money_on_me": "Vous n'avez pas assez d'argent sur vous",
+    "toast.house.no_enought_money_in_bank": "Vous n'avez pas assez d'argent sur votre compte en banque",
     "toast.house.already_buy": "Cette propriété est déjà acheter",
     "toast.house.success_buy": "Félicitation cette propriété est à vous désormais !",
     "toast.house.need_to_be_inside": "Vous avez besoin d'être dans une de vos propriété pour poser des objets",
     "toast.house.dont_own_it": "Cette propriété vous appartient pas",
-    "toast.house.doors_locked": "Les portes sont désormais fermer",
-    "toast.house.doors_unlocked": "Les portes sont désormais ouverte"
+    "toast.house.doors_locked": "Les portes sont désormais fermées",
+    "toast.house.doors_unlocked": "Les portes sont désormais ouvertes",
+    "toast.weapon.no_slot_available": "Vous n'avez pas de place pour une arme sur vous"
 }
