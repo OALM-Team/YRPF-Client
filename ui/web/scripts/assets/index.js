@@ -34,7 +34,9 @@ export default {
         "15": require("../../assets/icons/jerrican_fuel.png"),
         "16": require("../../assets/icons/cuff.png"),
         "17": require("../../assets/icons/defibrilator.png"),
-        "18": require("../../assets/icons/ls.png")
+        "18": require("../../assets/icons/ls.png"),
+        "19": require("../../assets/icons/w-1.png"),
+        "20": require("../../assets/icons/ammo.png")
     },
     worlditems: {
         "50001": require("../../assets/worlditems/50001.png"),
