@@ -45,7 +45,7 @@ class GrowboxMenu extends React.Component {
                         </div>
                     })}
             </div>
-            <div className={"ui-btn ui-btn-error"} onClick={() => { }} style={{marginTop: "5px"}}>
+            <div className={"ui-btn ui-btn-error"} onClick={() => { window.CallEvent("RemoteCallInterface", "Growbox:Destroy", this.props.growboxmenu.selectedGrowboxId) }} style={{marginTop: "5px"}}>
                 {i18n.t("ui.common.destroy", [])}
             </div>
             {this.state.selectedItemId != "" ? <UIWindow type="growbox-item" title={i18n.t("ui.growboxmenu_item.windowName", [])} width="200px" height="180px"

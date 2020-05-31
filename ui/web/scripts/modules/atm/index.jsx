@@ -46,18 +46,20 @@ class ATM extends React.Component {
             >
                 <div className="atm">
                     {this.state.operationType == null ? <div>
-                            <div className="ribbon animated fadeIn">
+                        <div className="ribbon animated fadeIn">
                             {i18n.t("ui.atm.greetings", [])}
                         </div>
 
                         <div className="animated fadeIn" style={{textAlign: "center", marginTop: "20px"}}>
                             <div className="atm-button" onClick={() => {
-                                this.setState({value: "", operationType: "deposit"})
+                                this.setState({value: "", operationType: "deposit"});
+                                window.CallEvent("RemoteCallInterface", "ATM:GetInfos");
                             }}>
                                 {i18n.t("ui.atm.deposit", [])}
                             </div>
                             <div className="atm-button" onClick={() => {
-                                this.setState({value: "", operationType: "withdraw"})
+                                this.setState({value: "", operationType: "withdraw"});
+                                window.CallEvent("RemoteCallInterface", "ATM:GetInfos");
                             }}>
                                 {i18n.t("ui.atm.withdraw", [])}
                             </div>
@@ -65,6 +67,13 @@ class ATM extends React.Component {
                     </div> : null}
 
                     {this.state.operationType == "deposit" ? <div>
+                        <div className="ribbon animated fadeIn">
+                            {i18n.t("ui.atm.in_bank", [])} : <b>{this.props.atm.amount}$</b>
+                        </div>
+                        <div className="ribbon animated fadeIn">
+                            {i18n.t("ui.atm.on_you", [])} : <b>{this.props.atm.cashAmount}$</b>
+                        </div>
+
                         <input type="text" className="atm-textbox" value={this.state.value} onChange={() => {}} />
                         <br />
                         <KeyPad onContentChange={(content) => {
@@ -79,6 +88,13 @@ class ATM extends React.Component {
                     </div> : null}
 
                     {this.state.operationType == "withdraw" ? <div>
+                        <div className="ribbon animated fadeIn">
+                            {i18n.t("ui.atm.in_bank", [])} : <b>{this.props.atm.amount}$</b>
+                        </div>
+                        <div className="ribbon animated fadeIn">
+                            {i18n.t("ui.atm.on_you", [])} : <b>{this.props.atm.cashAmount}$</b>
+                        </div>
+
                         <input type="text" className="atm-textbox" value={this.state.value} onChange={() => {}} />
                         <br />
                         <KeyPad onContentChange={(content) => {
@@ -100,7 +116,9 @@ class ATM extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        _: state.i18n
+        _: state.i18n,
+        inventory: state.inventory,
+        atm: state.atm
     }
 }, (dispatch) => {
     return {
