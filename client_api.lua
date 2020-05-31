@@ -106,6 +106,10 @@ AddEvent("OnKeyPress", function(key)
         CallRemoteEvent("Vehicle:RequestLockToogle")
     end
 
+    if(IsCtrlPressed() and key == "G") then
+        CallRemoteEvent("Weapon:StoreWeapon")
+    end
+
     -- ShowMap
     if(key == "M") then
         CallRemoteEvent("GlobalUI:ToogleWindow", "bigmap")

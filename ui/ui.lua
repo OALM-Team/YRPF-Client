@@ -1,7 +1,7 @@
 GlobalUI = nil
 
 function OnPackageStart()
-    ShowHealthHUD(false)
+    ShowHealthHUD(true)
 
     GlobalUI = CreateWebUI(0, 0, 0, 0, 5, 90)
     SetWebAlignment(GlobalUI, 0.0, 0.0)

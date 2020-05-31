@@ -103,4 +103,3 @@ function FreezePlayer()
 end
 AddRemoteEvent("Character:FreezePlayer", FreezePlayer)
 
-

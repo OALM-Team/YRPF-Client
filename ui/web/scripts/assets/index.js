@@ -14,7 +14,12 @@ export default {
         icon_atm: require("../../assets/gamemap/icon_atm.png"),
         icon_vseller: require("../../assets/gamemap/icon_vseller.png"),
         icon_hopital: require("../../assets/gamemap/icon_hopital.png"),
-        icon_police: require("../../assets/gamemap/icon_police.png")
+        icon_police: require("../../assets/gamemap/icon_police.png"),
+        icon_clothes: require("../../assets/gamemap/icon_clothes.png"),
+        icon_armory: require("../../assets/gamemap/icon_armory.png"),
+        icon_shop: require("../../assets/gamemap/icon_shop.png"),
+        icon_delivery_2: require("../../assets/gamemap/icon_delivery_2.png"),
+        icon_turtle: require("../../assets/gamemap/icon_turtle.png")
     },
     items: {
         "1": require("../../assets/icons/apple.png"),
@@ -36,7 +41,15 @@ export default {
         "17": require("../../assets/icons/defibrilator.png"),
         "18": require("../../assets/icons/ls.png"),
         "19": require("../../assets/icons/w-1.png"),
-        "20": require("../../assets/icons/ammo.png")
+        "20": require("../../assets/icons/ammo.png"),
+        "21": require("../../assets/icons/w-3.png"),
+        "22": require("../../assets/icons/w-7.png"),
+        "23": require("../../assets/icons/mask_1.png"),
+        "24": require("../../assets/icons/mask_2.png"),
+        "25": require("../../assets/icons/mask_3.png"),
+        "26": require("../../assets/icons/turtle.png"),
+        "27": require("../../assets/icons/bag_1.png"),
+        "28": require("../../assets/icons/repairkit.png")
     },
     worlditems: {
         "50001": require("../../assets/worlditems/50001.png"),
