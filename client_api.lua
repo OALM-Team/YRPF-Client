@@ -124,6 +124,10 @@ AddRemoteEvent("Map:RemoveWaypoint", function(uuid)
     DestroyWaypoint(WaypointsList[uuid])
 end)
 
+AddRemoteEvent("Time:SetHour", function(hour)
+    SetTime(hour)
+end)
+
 function SetCameraAPI(out,height)
 	local x,y,z = GetPlayerLocation()
     Delay(100, function()

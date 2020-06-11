@@ -1,1 +1,41 @@
-<html><head><link rel="stylesheet" href="animate.aa6560e3.css"><link rel="stylesheet" href="styles.507dbfb9.css"><meta charset="UTF-8"><link rel="stylesheet" href="scripts.58a06279.css"></head><body> <div id="root"></div> <script>"undefined"!=typeof ue?(!function(e){ue.game={},ue.game.callevent=function(n){if("string"==typeof n)if(0==(arguments.length<=1?0:arguments.length-1))e.callevent(n,"");else{for(var l=[],t=0;t<(arguments.length<=1?0:arguments.length-1);t++)l[t]=t+1<1||arguments.length<=t+1?void 0:arguments[t+1];e.callevent(n,JSON.stringify(l))}}}(ue.game),CallEvent=ue.game.callevent):window.CallEvent=function(e){console.log(e)};</script> <script src="scripts.299158d8.js"></script> </body></html>
+<html>
+<head>
+    <link rel="stylesheet" href="/animate.0fae1850.css">
+    <link rel="stylesheet" href="/styles.434540e1.css">
+    <meta charset="UTF-8">
+<script src="/animate.0fae1850.js"></script><script src="/styles.434540e1.js"></script><link rel="stylesheet" href="/scripts.bb9f651a.css"></head>
+<body>
+    <div id="root"></div>
+
+    <script>if (typeof ue != "undefined") {
+  (function (obj) {
+    ue.game = {};
+
+    ue.game.callevent = function (name) {
+      if (typeof name != "string") {
+        return;
+      }
+
+      if ((arguments.length <= 1 ? 0 : arguments.length - 1) == 0) {
+        obj.callevent(name, "");
+      } else {
+        var params = [];
+
+        for (var i = 0; i < (arguments.length <= 1 ? 0 : arguments.length - 1); i++) {
+          params[i] = i + 1 < 1 || arguments.length <= i + 1 ? undefined : arguments[i + 1];
+        }
+
+        obj.callevent(name, JSON.stringify(params));
+      }
+    };
+  })(ue.game);
+
+  CallEvent = ue.game.callevent;
+} else {
+  window.CallEvent = function (eventName) {
+    console.log(eventName);
+  };
+}</script>
+    <script src="/scripts.bb9f651a.js"></script>
+</body>
+</html>
