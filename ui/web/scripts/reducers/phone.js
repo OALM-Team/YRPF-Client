@@ -4,6 +4,9 @@ const initialState = {
     currentScreen: "homepage",
     phoneNumber: "0788253614",
     currentScreenParam: null,
+    inCallWith: "0780521432",
+    inCallState: -1,
+    phoneCallStartTime: new Date().getTime(),
     contacts: [
         { id: 1, name: "Borris Johnson", number: "0780521432" }
     ],
@@ -67,6 +70,15 @@ export default (state, action) => {
                 }
                 ]
             }
+
+        case constants.SET_PHONE_NUMBER:
+            return { ...state, phoneNumber: action.phoneNumber }
+
+        case constants.START_PHONE_CALL_TIMER:
+            return { ...state, phoneCallStartTime: new Date().getTime(), currentScreen: "in-call" }
+
+        case constants.SET_PHONE_CALL_STATE:
+            return { ...state, inCallState: action.inCallState, inCallWith: action.inCallWith}
 
         default: return state;
     }

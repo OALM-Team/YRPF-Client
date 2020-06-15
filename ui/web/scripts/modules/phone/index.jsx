@@ -30,7 +30,8 @@ class Phone extends React.Component {
             </div>
             <div id="phone-background"></div>
             <div id="phone-anchor"></div>
-            <div id="status-bar"></div>
+            <div id="status-bar">
+            </div>
             <div id="screen">
                 <PhoneNavigation />
             </div>
