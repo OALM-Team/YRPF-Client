@@ -3,8 +3,10 @@ import { connect } from "react-redux";
 import constants from "../actions/constants";
 import { setWindowState } from "../actions/ui_modules";
 import { UIWindow } from "../components";
-import {Inventory, ATM, Garage, VSeller, CustomCharacter, VChest, GameMap, XPBar, BigMap, Death, CharacterJob,
-     Seller, LangSelector, StateWindow, GrowboxMenu, VehicleState, FoodBar, Phone, HouseBuy} from "./";
+import {
+    Inventory, ATM, Garage, VSeller, CustomCharacter, VChest, GameMap, XPBar, BigMap, Death, CharacterJob,
+    Seller, LangSelector, StateWindow, GrowboxMenu, VehicleState, FoodBar, Phone, HouseBuy, WelcomeScreen
+} from "./";
 import { ToastContainer, toast } from 'react-toastify';
 import * as i18n from "../i18n";
 
@@ -52,6 +54,7 @@ class App extends React.Component {
             {this.props.uiModules.foodbar ? <FoodBar /> : null}
             {this.props.uiModules.phone ? <Phone /> : null}
             {this.props.uiModules.houseBuy ? <HouseBuy /> : null}
+            {this.props.uiModules.welcomeScreen ? <WelcomeScreen /> : null}
         </div>
     }
 }

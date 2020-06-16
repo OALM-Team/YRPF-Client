@@ -18,6 +18,7 @@ import VehicleState from "./vehiclestate";
 import FoodBar from "./foodbar";
 import Phone from "./phone";
 import HouseBuy from "./houseBuy";
+import WelcomeScreen from "./welcomescreen";
 
 export { 
     App,
@@ -39,5 +40,6 @@ export {
     VehicleState,
     FoodBar,
     Phone,
-    HouseBuy
+    HouseBuy,
+    WelcomeScreen
 }

@@ -21,6 +21,7 @@ const initialState = {
     foodbar: true,
     phone: process.env.NODE_ENV == "development" ? true : false,
     houseBuy: false,
+    welcomeScreen: true,
     uiPosition: {
         inventory: {x: 400, y: 250},
         atm: {x: 400, y: 50},
