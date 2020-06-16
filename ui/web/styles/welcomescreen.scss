@@ -1,0 +1,62 @@
+#welcomescreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    z-index: 1000; 
+    pointer-events: all;
+
+    .welcome-img {
+        background-image: url(../assets/welcomeimage.png);
+        position: fixed;
+        bottom: -50px;
+        left: 0;
+        right: 0;
+        top: 0;
+        background-size: cover;
+        background-position-y: -100px;
+    }
+
+    .button-area {
+        position: fixed;
+        bottom: 200px;
+        left: 0;
+        right: 0;
+    }
+
+    .ribbon {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 170px;
+        background-color: #1b1b1b;
+        text-align: center;
+        border-top: 6px solid $accentColor;
+
+        .block {
+            vertical-align: top;
+            width: 30%;
+            display: inline-block;
+            color: white;
+
+            h2 {
+                text-transform: uppercase;
+            }
+
+            span {
+                color: lightgray;
+            }
+
+            b {
+                color: $accentColor;
+            }
+        }
+
+        .block-center-text {
+            margin-top: 25px;
+        }
+    }
+}

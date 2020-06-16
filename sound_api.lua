@@ -1,4 +1,5 @@
 AmbiantSounds = {}
+SoundsInstance = {}
 
 AddEvent("OnObjectStreamIn", function(object)
     CheckAmbiantSound(object)
@@ -31,4 +32,22 @@ function Play2DSound(path, volume)
 end
 AddEvent("Play2DSound", Play2DSound)
 AddRemoteEvent("Sound:Play2DSound", Play2DSound)
+
+function PlayAndRegister2DSound(id, path, volume) 
+    local s = CreateSound(path)
+    SoundsInstance[id] = s
+    SetSoundVolume(s, volume)
+end
+AddEvent("PlayAndRegister2DSound", PlayAndRegister2DSound)
+AddRemoteEvent("Sound:PlayAndRegister2DSound", PlayAndRegister2DSound)
+
+
+function Stop2DSound(id) 
+    local s = SoundsInstance[id]
+    if s ~= nil then
+        DestroySound(s)
+    end
+end
+AddEvent("Stop2DSound", Stop2DSound)
+AddRemoteEvent("Sound:Stop2DSound", Stop2DSound)
 

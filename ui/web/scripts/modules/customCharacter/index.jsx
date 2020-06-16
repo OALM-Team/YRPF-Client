@@ -49,6 +49,10 @@ class CustomCharacter extends React.Component {
         window.CallEvent("RemoteCallInterface", "Character:Style:CustomDone");
     }
 
+    componentDidUpdate() {
+        window.CallEvent("SetInputMode", 2)
+    }
+
     componentDidMount() {
         this.reset();
         window.CallEvent("SetInputMode", 2)

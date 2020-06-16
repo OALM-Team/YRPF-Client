@@ -83,18 +83,27 @@ class InCall extends React.Component {
 
                                 case 1:
                                     return <div>
-                                        <div className="numpad-btn numpad-btn-rotate app-icon-red" style={{transform: "rotate(135deg)"}} onClick={() => { window.CallEvent("RemoteCallInterface", "Phone:RequestEndCall"); }}>
+                                        <div className="numpad-btn numpad-btn-rotate app-icon-red" style={{transform: "rotate(135deg)"}} onClick={() => { 
+                                            window.CallEvent("RemoteCallInterface", "Phone:RequestEndCall"); 
+                                            this.props.setPhoneScreen("homepage");
+                                            }}>
                                             <FontAwesomeIcon icon={faPhoneAlt} />
                                         </div>
                                     </div>
 
                                 case 2:
                                     return <div>
-                                        <div className="numpad-btn app-icon-green" onClick={() => { window.CallEvent("RemoteCallInterface", "Phone:RequestAnswer"); }}>
+                                        <div className="numpad-btn app-icon-green" onClick={() => { 
+                                            window.CallEvent("RemoteCallInterface", "Phone:RequestAnswer"); 
+                                            }}>
                                             <FontAwesomeIcon icon={faPhoneAlt} />
                                         </div>
-                                        <div style={{width: "30px", display: "inline-block"}} onClick={() => { window.CallEvent("RemoteCallInterface", "Phone:RequestEndCall"); }} />
-                                        <div className="numpad-btn numpad-btn-rotate app-icon-red" style={{transform: "rotate(135deg)"}}>
+                                        <div style={{width: "30px", display: "inline-block"}} />
+                                        <div className="numpad-btn numpad-btn-rotate app-icon-red" style={{transform: "rotate(135deg)"}}
+                                         onClick={() => { 
+                                            window.CallEvent("RemoteCallInterface", "Phone:RequestEndCall"); 
+                                            this.props.setPhoneScreen("homepage");
+                                            }}>
                                             <FontAwesomeIcon icon={faPhoneAlt} />
                                         </div>
                                     </div>
@@ -104,7 +113,7 @@ class InCall extends React.Component {
                                         <div className="numpad-btn numpad-btn-rotate app-icon-red" style={{transform: "rotate(135deg)"}} 
                                             onClick={() => { 
                                                 window.CallEvent("RemoteCallInterface", "Phone:RequestEndCall");
-                                                this.props.setPhoneScreen("call");
+                                                this.props.setPhoneScreen("homepage");
                                             }}>
                                             <FontAwesomeIcon icon={faPhoneAlt} />
                                         </div>
