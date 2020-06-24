@@ -19,6 +19,7 @@ import FoodBar from "./foodbar";
 import Phone from "./phone";
 import HouseBuy from "./houseBuy";
 import WelcomeScreen from "./welcomescreen";
+import GenericMenu from "./genericmenu";
 
 export { 
     App,
@@ -41,5 +42,6 @@ export {
     FoodBar,
     Phone,
     HouseBuy,
-    WelcomeScreen
+    WelcomeScreen,
+    GenericMenu
 }

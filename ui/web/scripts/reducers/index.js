@@ -14,5 +14,6 @@ import foodbar from "./foodbar";
 import phone from "./phone";
 import house from "./house";
 import atm from "./atm";
+import genericMenu from "./genericmenu";
 
-export { uiModules, inventory, garage, vseller, vchest, map, xpbar, characterjob, seller, i18n, growboxmenu, vehiclestate, foodbar, phone, house, atm }
+export { uiModules, inventory, garage, vseller, vchest, map, xpbar, characterjob, seller, i18n, growboxmenu, vehiclestate, foodbar, phone, house, atm, genericMenu }

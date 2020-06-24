@@ -1,0 +1,35 @@
+#generic-menu {
+    background-color: #1b1b1ba2;
+    position: fixed;
+    bottom: 130px;
+    left: 50%;
+    width: 250px;
+    min-height: 50px;
+    transform: translate(-50%, 0);
+    border-radius: 7px;
+    pointer-events: all;
+    overflow: auto;
+
+    .item-menu {
+        user-select: none;
+        font-family: 'Roboto';
+        color: white;
+        background-color: #1b1b1b34;
+        height: 50px;
+        line-height: 50px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.2s;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-bottom: 1px solid rgb(143, 143, 143);
+
+        &:hover {
+            background-color: $accentColor;
+        }
+
+        &:active {
+            background-color: darken($color: $accentColor, $amount: 10);
+        }
+    }
+}

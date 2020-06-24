@@ -17,10 +17,12 @@ class Phone extends React.Component {
 
     componentDidMount() {
         window.CallEvent("SetInputMode", 1)
+        window.CallEvent("RemoteCallInterface", "Phone:RequestAttachPhone", "true");
     }
 
     componentWillUnmount() {
-        window.CallEvent("SetInputMode", 0)
+        window.CallEvent("SetInputMode", 0);
+        if(this.props.phone.inCallState == -1) window.CallEvent("RemoteCallInterface", "Phone:RequestAttachPhone", "false");
     }
 
     render() {
@@ -42,7 +44,8 @@ class Phone extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        _: state.i18n
+        _: state.i18n,
+        phone: state.phone
     }
 }, (dispatch) => {
     return {

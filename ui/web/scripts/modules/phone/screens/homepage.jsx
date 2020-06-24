@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import assets from "../../../assets";
 import * as React from "react";
 import constants from "../../../actions/constants";
-import { faPhoneAlt, faEnvelope, faLifeRing, faHeadset, faBook, faMap, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faPhoneAlt, faEnvelope, faLifeRing, faHeadset, faBook, faMap, faShoppingCart, faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Homepage extends React.Component {
@@ -40,6 +40,12 @@ class Homepage extends React.Component {
                             Amozon
                         </div>
                     </div>
+                    <div className="app-icon app-icon-purple" onClick={() => this.props.setPhoneScreen("compagny")}>
+                        <FontAwesomeIcon icon={faBuilding} />
+                        <div className="text">
+                            Entreprise
+                        </div>
+                    </div>
                 </div>
 
                 
@@ -51,10 +57,10 @@ class Homepage extends React.Component {
                     <div className="app-icon app-icon-red" onClick={() => this.props.setPhoneScreen("message-list")}>
                         <FontAwesomeIcon icon={faEnvelope} />
                     </div>
-                    <div className="app-icon app-icon-red">
+                    <div className="app-icon app-icon-red"  onClick={() => this.props.setPhoneScreen("urgency")}>
                         <FontAwesomeIcon icon={faLifeRing} />
                     </div>
-                    <div className="app-icon app-icon-blue">
+                    <div className="app-icon app-icon-blue"  onClick={() => this.props.setPhoneScreen("urgency-list")}>
                         <FontAwesomeIcon icon={faHeadset} />
                     </div>
                 </div>

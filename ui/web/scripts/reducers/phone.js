@@ -1,7 +1,7 @@
 import constants from "../actions/constants";
 
 const initialState = {
-    currentScreen: "homepage",
+    currentScreen: "compagny",
     phoneNumber: "0788253614",
     currentScreenParam: null,
     inCallWith: "0780521432",
@@ -26,8 +26,22 @@ const initialState = {
         { messageType: 1, fromNumber: "0788253614", message: "Je suis un message de test 2" },
         { messageType: 1, fromNumber: "0788253613", message: "Je suis un message de test 3" },
         { messageType: 1, fromNumber: "0788253614", message: "Je suis un message de test 2" }
-    ]
-
+    ],
+    urgencyMessages: [
+        { id: 1, from: "+3378965412", text: "Lorem ipsum", service: "police" }
+    ],
+    compagny: {
+        id: 1,
+        myrank: 1,
+        name: "My Compagny",
+        bankCash: 0,
+        employees: [
+            { steamid: "123456789", name: "Borris Johnson", rank: 1, online: true },
+            { steamid: "123456789", name: "Borris", rank: 1, online: false },
+            { steamid: "123456789", name: "Borris", rank: 1, online: false },
+            { steamid: "123456789", name: "Borris", rank: 1, online: true }
+        ]
+    }
 }
 
 export default (state, action) => {
@@ -78,7 +92,62 @@ export default (state, action) => {
             return { ...state, phoneCallStartTime: new Date().getTime(), currentScreen: "in-call" }
 
         case constants.SET_PHONE_CALL_STATE:
-            return { ...state, inCallState: action.inCallState, inCallWith: action.inCallWith}
+            return { ...state, inCallState: action.inCallState, inCallWith: action.inCallWith }
+
+        case constants.ADD_PHONE_URGENCY:
+            return {
+                ...state, urgencyMessages: [...state.urgencyMessages,
+                {
+                    id: action.id,
+                    from: action.from,
+                    text: action.text,
+                    service: action.service
+                }
+                ]
+            }
+
+        case constants.CLEAR_PHONE_URGENCY:
+            return {
+                ...state, urgencyMessages: []
+            }
+
+        case constants.SET_COMPAGNY:
+            return {
+                ...state, compagny: {
+                    ...state.compagny,
+                    id: action.id,
+                    myrank: action.myrank,
+                    name: action.name,
+                    bankCash: action.bankCash
+                }
+            }
+
+        case constants.CLEAR_COMPAGNY_EMPLOYEES:
+            return {
+                ...state, compagny: {
+                    ...state.compagny,
+                    employees: []
+                }
+            }
+
+        case constants.CLEAR_COMPAGNY_EMPLOYEES:
+            return {
+                ...state, compagny: {
+                    ...state.compagny,
+                    employees: []
+                }
+            }
+
+        case constants.ADD_COMPAGNY_EMPLOYEE:
+            return {
+                ...state, compagny: {
+                    ...state.compagny,
+                    employees: [
+                        ...state.compagny.employees,
+                        { steamid: action.steamid, name: action.name, rank: action.rank, online: action.online }
+                    ]
+                }
+            }
 
         default: return state;
     }
