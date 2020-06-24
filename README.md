@@ -10,6 +10,7 @@ The UI is written in JS with React/Redux and Parcel Packager
 - Install node.js (https://nodejs.org/en/) the current branch
 - Go in ./ui/web with your terminal (cd ...)
 - ```npm i``` this will install all dependencies
+- ```npm i -g parcel-bundler``` this will install parcel
 - ```npm run build``` will build the dist version of the frontend
 - Add yrpf package to your server_config.json
 
