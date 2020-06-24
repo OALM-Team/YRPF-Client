@@ -10,6 +10,10 @@ AddEvent("OnObjectStreamIn", function(object)
     end
 end)
 
+AddEvent("Modding:AddCustomObject", function(id, path)
+	ReplaceObjectModelMesh(id, path)
+end)
+
 AddEvent("OnObjectNetworkUpdatePropertyValue", function(object, PropertyName, PropertyValue)
     if PropertyName == "customModelPath" then
         UpdateCustomModel(object, PropertyValue)

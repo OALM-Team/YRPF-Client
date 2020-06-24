@@ -11,6 +11,9 @@ import Contacts from "./screens/contacts";
 import AddContacts from "./screens/addContact";
 import ItemShop from "./screens/item-shop";
 import InCall from "./screens/in-call";
+import Urgency from "./screens/urgency";
+import UrgencyList from "./screens/urgency-list";
+import Compagny from "./screens/compagny";
 import {
     TransitionGroup,
     CSSTransition
@@ -61,6 +64,12 @@ class PhoneNavigation extends React.Component {
                                 return <ItemShop />;
                             case "in-call":
                                 return <InCall />;
+                            case "urgency":
+                                return <Urgency />
+                            case "urgency-list":
+                                return <UrgencyList />
+                            case "compagny":
+                                return <Compagny />
                             default: return null;
                         }
                     })()}

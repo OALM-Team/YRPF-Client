@@ -13,6 +13,9 @@ function SetHairMesh(player, mesh)
     end
     
     local SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Body")
+    if(SkeletalMeshComponent == nil) then
+        return
+    end
     SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Clothing4")
     SkeletalMeshComponent:SetSkeletalMesh(USkeletalMesh.LoadFromAsset(mesh))
 end
@@ -23,6 +26,9 @@ function SetHairColor(player, color)
         player = GetPlayerId()
     end
     local SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Clothing4")
+    if(SkeletalMeshComponent == nil) then
+        return
+    end
     local r, g, b, a = HexToRGBA("0x"..color)
     if SkeletalMeshComponent ~= nil then
         SkeletalMeshComponent:SetColorParameterOnMaterials("Hair Color", FLinearColor(r / 7,g / 7,b / 7, 1))
@@ -36,6 +42,9 @@ function SetTopMesh(player, mesh)
     end
     
     local SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Body")
+    if(SkeletalMeshComponent == nil) then
+        return
+    end
     SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Clothing0")
 	SkeletalMeshComponent:SetSkeletalMesh(USkeletalMesh.LoadFromAsset(mesh))
 end
@@ -48,8 +57,11 @@ function SetPantMesh(player, mesh)
     end
     
     local SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Body")
-		SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Clothing1")
-		SkeletalMeshComponent:SetSkeletalMesh(USkeletalMesh.LoadFromAsset(mesh))
+    if(SkeletalMeshComponent == nil) then
+        return
+    end
+    SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Clothing1")
+    SkeletalMeshComponent:SetSkeletalMesh(USkeletalMesh.LoadFromAsset(mesh))
 end
 AddEvent("Character:SetPantMesh", SetPantMesh)
 
@@ -60,6 +72,9 @@ function SetShoesMesh(player, mesh)
     end
     
     local SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Body")
+    if(SkeletalMeshComponent == nil) then
+        return
+    end
     SkeletalMeshComponent = GetPlayerSkeletalMeshComponent(player, "Clothing2")
     SkeletalMeshComponent:SetSkeletalMesh(USkeletalMesh.LoadFromAsset(mesh))
 end

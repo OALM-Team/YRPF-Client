@@ -100,6 +100,7 @@ function BlinkVehicleLights(veh)
 end
 AddEvent("BlinkVehicleLights", BlinkVehicleLights)
 
+local chatShow = true
 AddEvent("OnKeyPress", function(key)
     -- Lock toogle vehicle
     if(IsCtrlPressed() and key == "L") then
@@ -113,6 +114,20 @@ AddEvent("OnKeyPress", function(key)
     -- ShowMap
     if(key == "M") then
         CallRemoteEvent("GlobalUI:ToogleWindow", "bigmap")
+    end
+
+    if(key == "F10") then
+        if chatShow then
+            ShowHealthHUD(false)
+            ShowWeaponHUD(false)
+            ShowChat(false)
+            chatShow = true
+        else
+            ShowHealthHUD(false)
+            ShowWeaponHUD(false)
+            ShowChat(true)
+            chatShow = false
+        end
     end
 end)
 
@@ -173,3 +188,53 @@ function TriggerLoadLevel()
     end)
 end
 AddRemoteEvent("Game:TriggerLoadLevel", TriggerLoadLevel)
+
+-- Camera
+local currentCameraMode = 1
+local maxMode = 8
+local standardCameraRightOffset = 20.0
+
+AddEvent("OnKeyPress", function(key)
+    if key == "V" and IsCtrlPressed() then
+        currentCameraMode = currentCameraMode + 1
+        if currentCameraMode > maxMode then
+            currentCameraMode = 1
+        end
+        SetCameraMode()
+    end
+end)
+
+function SetCameraMode()
+    if currentCameraMode == 1 then
+        EnableFirstPersonCamera(false)
+        SetCameraLocation(0,0,0, false)
+        SetCameraFoV(90)
+    elseif currentCameraMode == 2 then
+        EnableFirstPersonCamera(false)
+        SetCameraLocation(240.0, 40.0, 0.0, false)
+        SetCameraFoV(90)
+    elseif currentCameraMode == 3 then
+        EnableFirstPersonCamera(true)
+        SetCameraLocation(0.0, 15.0, 0.0, false)
+    elseif currentCameraMode == 4 then
+        EnableFirstPersonCamera(false)
+        SetCameraLocation(200, standardCameraRightOffset, 0.0, false)
+        SetCameraFoV(110)
+    elseif currentCameraMode == 5 then
+        EnableFirstPersonCamera(false)
+        SetCameraLocation(170, standardCameraRightOffset, 0.0, false)
+        SetCameraFoV(110)
+    elseif currentCameraMode == 6 then
+        EnableFirstPersonCamera(false)
+        SetCameraLocation(140, standardCameraRightOffset, 0.0, false)
+        SetCameraFoV(110)
+    elseif currentCameraMode == 7 then
+        EnableFirstPersonCamera(false)
+        SetCameraLocation(100, standardCameraRightOffset, 0.0, false)
+        SetCameraFoV(110)
+    elseif currentCameraMode == 8 then
+        EnableFirstPersonCamera(false)
+        SetCameraLocation(0, standardCameraRightOffset, 0.0, false)
+        SetCameraFoV(110)
+    end
+end

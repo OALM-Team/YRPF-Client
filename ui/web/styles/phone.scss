@@ -125,6 +125,10 @@
         background: linear-gradient(190deg, rgba(12, 169, 253, 1) 0%, rgba(1, 141, 228, 1) 100%);
     }
 
+    .app-icon-purple {
+        background: linear-gradient(190deg, rgb(216, 11, 107)0%, rgb(116, 8, 101) 100%);
+    }
+
     .app-icon-red {
         background: linear-gradient(190deg, rgba(209, 1, 1, 1) 0%, rgba(209, 1, 1, 1) 100%);
     }
@@ -461,6 +465,120 @@
                     color: white;
                     transform: scale(0.9) rotate(135deg) !important;
                 }
+            }
+        }
+    }
+
+    .urgency-screen {
+        select {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 18px;
+            padding: 3px;
+            border: 1px solid lightgray;
+        }
+
+        textarea {
+            font-family: "Roboto";
+            padding: 5px;
+            font-size: 17px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            width: 100%;
+            height: 150px;
+            border: 1px solid lightgray;
+            resize: none;
+        }
+    }
+
+    .urgency-list-screen {
+        padding: 5px;
+
+        .urgency-item {
+            background-color: rgb(59, 59, 59);
+            padding: 7px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+
+            .number {
+                background-color: lightgray;
+                padding: 5px;
+                border-radius: 5px;
+                font-size: 12px;
+                text-align: center;
+            }
+
+            .urgency-content {
+                margin-top: 5px;
+                color: white;
+                padding: 5px;
+                font-size: 15px;
+                border-radius: 5px;
+            }
+        }
+    }
+    
+    .compagny-screen {
+        padding: 5px;
+
+        select {
+            width: 100%;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 18px;
+            padding: 3px;
+            border: 1px solid lightgray;
+        }
+
+        .compagny-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .compagny-money {
+            color: black;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: purple;
+        }
+
+        .employee-item {
+            padding: 10px;
+            transition: 0.2s;
+            border-bottom: 1px solid lightgray;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(230, 230, 230);
+            }
+
+            &:active {
+                background-color: rgb(177, 177, 177);
+            }
+
+            .letter-circle {
+                background-color: lightgray;
+                border: 1px solid lighten($color: gray, $amount: 20%);
+                color: black;
+                text-align: center;
+                width: 30px;
+                height: 30px;
+                line-height: 30px;
+                border-radius: 50px;
+                display: inline-block;
+            }
+
+            .contact-name {
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 10px;
             }
         }
     }
