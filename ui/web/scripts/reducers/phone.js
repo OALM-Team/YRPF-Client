@@ -1,14 +1,15 @@
 import constants from "../actions/constants";
 
 const initialState = {
-    currentScreen: "compagny",
+    currentScreen: "homepage",
     phoneNumber: "0788253614",
     currentScreenParam: null,
     inCallWith: "0780521432",
     inCallState: -1,
     phoneCallStartTime: new Date().getTime(),
     contacts: [
-        { id: 1, name: "Borris Johnson", number: "0780521432" }
+        { id: 1, name: "Borris Johnson", number: "0780521432" },
+        { id: 2, name: "Boudie Lee", number: "0789654854" }
     ],
     conversations: [
         { number: "0780521432", lastMessage: "Salut la forme mon pote ? ça fait longtemps" }

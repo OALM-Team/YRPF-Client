@@ -32,8 +32,8 @@
         })(ue.game);
         CallEvent = ue.game.callevent;
     } else {
-        window.CallEvent = function(eventName) {
-            console.log(eventName)
+        window.CallEvent = function(eventName, data, extra) {
+            console.log(eventName, data, extra)
         }
     }
     </script>

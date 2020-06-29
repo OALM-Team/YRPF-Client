@@ -19,7 +19,9 @@ export default {
         icon_armory: require("../../assets/gamemap/icon_armory.png"),
         icon_shop: require("../../assets/gamemap/icon_shop.png"),
         icon_delivery_2: require("../../assets/gamemap/icon_delivery_2.png"),
-        icon_turtle: require("../../assets/gamemap/icon_turtle.png")
+        icon_turtle: require("../../assets/gamemap/icon_turtle.png"),
+        icon_boat_seller: require("../../assets/gamemap/icon_boat_seller.png"),
+        icon_boat_garage: require("../../assets/gamemap/icon_boat_garage.png")
     },
     items: {
         "1": require("../../assets/icons/apple.png"),
@@ -49,7 +51,11 @@ export default {
         "25": require("../../assets/icons/mask_3.png"),
         "26": require("../../assets/icons/turtle.png"),
         "27": require("../../assets/icons/bag_1.png"),
-        "28": require("../../assets/icons/repairkit.png")
+        "28": require("../../assets/icons/repairkit.png"),
+        "29": require("../../assets/icons/twitch_mask.png"),
+        "30": require("../../assets/icons/taser.png"),
+        "31": require("../../assets/icons/m4.png"),
+        "32": require("../../assets/icons/ump.png")
     },
     worlditems: {
         "50001": require("../../assets/worlditems/50001.png"),
@@ -102,6 +108,10 @@ export default {
         "29": require("../../assets/vehicles/29.png"),
         "30": require("../../assets/vehicles/30.png"),
         "31": require("../../assets/vehicles/31.jpg"),
-        "32": require("../../assets/vehicles/32.jpg")
+        "32": require("../../assets/vehicles/32.jpg"),
+        "33": require("../../assets/vehicles/33.png"),
+        "34": require("../../assets/vehicles/34.png"),
+        "35": require("../../assets/vehicles/35.png"),
+        "36": require("../../assets/vehicles/36.png")
     }
 }

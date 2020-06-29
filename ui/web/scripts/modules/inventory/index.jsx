@@ -49,7 +49,6 @@ class Inventory extends React.Component {
                     this.props.updateUIPosition(x,y);
                 }}>
                 <div className="inventory-container">
-                    
                         {this.props.inventory.items.map((e, i) => {
                             return <span>
                                 <ContextMenuTrigger attributes={{className: "inline"}} id="item-context">
@@ -76,6 +75,13 @@ class Inventory extends React.Component {
                     </div>
                 </UIWindow> : null}
                 
+
+                
+                {this.props.inventory.hasBag ? <div className={"ui-btn"} style={{transform: "translateY(20px)"}} onClick={() => { 
+                        window.CallEvent("RemoteCallInterface", "Inventory:UnEquipBag");
+                    }}>
+                    Enlever le sac
+                </div> : null}
 
                 <div className="weight-bar">
                     <div className="inner-bar" style={{ width: (100 * this.props.inventory.currentWeight) / this.props.inventory.maxWeight + "%"}}></div>

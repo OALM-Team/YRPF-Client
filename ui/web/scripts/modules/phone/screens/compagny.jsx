@@ -15,7 +15,7 @@ class Compagny extends React.Component {
         this.state = {
             addMember: false,
             compagnyName: "",
-            selectedInviteMember: ""
+            selectedInviteMember:  this.props.phone.contacts.length > 0 ? this.props.phone.contacts[0].number : ""
         }
     }
 
@@ -23,6 +23,8 @@ class Compagny extends React.Component {
     }
 
     componentDidMount() {
+        this.props.resetContacts();
+        window.CallEvent("RemoteCallInterface", "Phone:RequestContacts");
         window.CallEvent("SetInputMode", 2)
     }
 
@@ -62,13 +64,14 @@ class Compagny extends React.Component {
                                 this.setState({ selectedInviteMember: evt.target.value })
                             }}>
                                 {this.props.phone.contacts.map((e, i) => {
-                                    return <option value={e.number}>
+                                    return <option value={e.number} key={i}>
                                         {e.name}
                                     </option>
                                 })}
                             </select>
                             <div className="ui-btn app-icon-purple" style={{ marginTop: "5px" }} onClick={() => {
-
+                                window.CallEvent("RemoteCallInterface", "Compagny:InviteEmployee", this.state.selectedInviteMember);
+                                this.setState({addMember: false})
                             }}>
                                 Inviter
                             </div>
@@ -84,7 +87,7 @@ class Compagny extends React.Component {
 
                                                 {this.props.phone.compagny.myrank == 1 ? <FontAwesomeIcon icon={faTimes} style={{ color: "red", cursor: "pointer" }}
                                                     onClick={() => {
-                                                        // Kick employee
+                                                        window.CallEvent("RemoteCallInterface", "Compagny:KickEmployee", e.steamid);
                                                     }} /> : null}
                                             </div>
                                         </div>
@@ -96,7 +99,7 @@ class Compagny extends React.Component {
             </div>
 
 
-            {this.props.phone.compagny.id == -1 ? null : <div className="bubble-bt app-icon-purple" onClick={() => this.setState({ addMember: !this.state.addMember })}>
+            {this.props.phone.compagny.id == -1 || this.props.phone.compagny.myrank != 1 ? null : <div className="bubble-bt app-icon-purple" onClick={() => this.setState({ addMember: !this.state.addMember })}>
                 <FontAwesomeIcon icon={faPlus} />
             </div>}
         </div>
@@ -111,6 +114,7 @@ export default connect((state, ownProps) => {
     }
 }, (dispatch) => {
     return {
+        resetContacts: () => dispatch({type: constants.RESET_CONTACTS}),
         setPhoneScreen: (screen, params) => dispatch({ type: constants.SET_PHONE_SCREEN, currentScreen: screen, params: params })
     }
 })(Compagny);
