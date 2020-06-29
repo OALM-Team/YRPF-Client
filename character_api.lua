@@ -105,6 +105,10 @@ AddEvent("OnPlayerStreamIn", function(player)
         SetTopMesh(player, GetPlayerPropertyValue(player, "top"))
         SetPantMesh(player, GetPlayerPropertyValue(player, "pant"))
         SetShoesMesh(player, GetPlayerPropertyValue(player, "shoes"))
+
+        -- Plate tag
+        TogglePlayerTag(player, "health", false)
+        TogglePlayerTag(player, "armor", false)
     end
 end)
 

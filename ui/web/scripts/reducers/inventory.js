@@ -3,7 +3,8 @@ import constants from "../actions/constants";
 const initialState = {
     items: [],
     currentWeight: 0,
-    maxWeight: 100
+    maxWeight: 100,
+    hasBag: false
 }
 
 export default (state, action) => {

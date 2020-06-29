@@ -15,3 +15,15 @@ end)
 AddFunctionExport("AddAmbiantSound", function(name, fileName, x,y,z, radius, volume)
     java.AddAmbiantSound(name, fileName, x,y,z, radius, volume)
 end)
+
+AddFunctionExport("SendToast", function(player, type, text)
+    java.SendToast(player, type, text)
+end)
+
+AddFunctionExport("AddItem", function(player, itemId, quantity)
+    return java.AddItem(player, itemId, quantity)
+end)
+
+AddFunctionExport("AddRestrictedZone", function(jobId, sx, sy, sz, ex, ey, ez)
+    return java.AddRestrictedZone(jobId, sx, sy, sz, ex, ey, ez)
+end)

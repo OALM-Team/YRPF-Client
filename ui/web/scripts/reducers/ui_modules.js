@@ -5,7 +5,7 @@ console.log();
 
 const initialState = {
     inventory: false,
-    atm: false,
+    atm: process.env.NODE_ENV == "development" ? true : false,
     garage: false,
     vseller: false,
     customCharacter: false,

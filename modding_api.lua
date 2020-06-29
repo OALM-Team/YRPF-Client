@@ -10,7 +10,7 @@ AddEvent("OnObjectStreamIn", function(object)
     end
 end)
 
-AddEvent("Modding:AddCustomObject", function(id, path)
+AddRemoteEvent("Modding:AddCustomObject", function(id, path)
 	ReplaceObjectModelMesh(id, path)
 end)
 

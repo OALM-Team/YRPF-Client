@@ -98,6 +98,8 @@
     "ui.atm.greetings": "Merci d'utiliser les DAB de Onset Paradise",
     "ui.atm.deposit": "DEPOT",
     "ui.atm.withdraw": "RETRAIT",
+    "ui.atm.withdraw_compagny": "RETRAIT ENTREPRISE",
+    "ui.atm.deposit_compagny": "DEPOT ENTREPRISE",
     "ui.atm.in_bank": "Argent en banque",
     "ui.atm.on_you": "Argent sur vous",
 
@@ -182,6 +184,10 @@
     "item.name.26": "Tortue",
     "item.name.27": "Sac de ville",
     "item.name.28": "Kit de réparation",
+    "item.name.29": "Masque Twitch",
+    "item.name.30": "Taser",
+    "item.name.31": "M4",
+    "item.name.32": "UMP",
     
     "ui.item.desc_1": "Une pomme juteuse et pas chère",
     "ui.item.desc_2": "De l'argent simplement",
@@ -211,6 +217,10 @@
     "ui.item.desc_26": "Une tortue de mer",
     "ui.item.desc_27": "Un petit sac pour se balader en ville",
     "ui.item.desc_28": "Pour réparer des véhicules ou d'autres choses",
+    "ui.item.desc_29": "Uniquement pour les streamers",
+    "ui.item.desc_30": "Et ça fait bim bam boum direct dans les boules",
+    "ui.item.desc_31": "Arme: M4",
+    "ui.item.desc_32": "Arme: UMP",
 
     "toast.inventory.no_space_left": "Vous n'avez plus de place sur vous",
     "toast.vehicle.lock_off": "Véhicule {0} désormais déverrouillé",
