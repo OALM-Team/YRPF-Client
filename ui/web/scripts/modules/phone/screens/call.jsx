@@ -13,7 +13,7 @@ class Call extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            numberInput: ""
+            numberInput: props.phone.currentScreenParam == null || props.phone.currentScreenParam == "" ? "" : props.phone.currentScreenParam
         }
     }
     

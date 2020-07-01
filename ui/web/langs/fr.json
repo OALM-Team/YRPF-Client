@@ -188,6 +188,8 @@
     "item.name.30": "Taser",
     "item.name.31": "M4",
     "item.name.32": "UMP",
+    "item.name.33": "Bandage",
+    "item.name.34": "Cric",
     
     "ui.item.desc_1": "Une pomme juteuse et pas chère",
     "ui.item.desc_2": "De l'argent simplement",
@@ -221,6 +223,8 @@
     "ui.item.desc_30": "Et ça fait bim bam boum direct dans les boules",
     "ui.item.desc_31": "Arme: M4",
     "ui.item.desc_32": "Arme: UMP",
+    "ui.item.desc_33": "Pour soigner les petites blessures",
+    "ui.item.desc_34": "Pour retourner des véhicules",
 
     "toast.inventory.no_space_left": "Vous n'avez plus de place sur vous",
     "toast.vehicle.lock_off": "Véhicule {0} désormais déverrouillé",

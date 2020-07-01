@@ -38,7 +38,7 @@ class UrgencyList extends React.Component {
             <div className="app-container urgency-list-screen">
                 {this.props.phone.urgencyMessages.map((e, i) => {
                     return <div className="urgency-item" key={i}>
-                        <div className="number">
+                        <div className="number" onClick={() => this.props.setPhoneScreen("call", e.from)}>
                             De <b>{e.from}</b>
                         </div>
                         <div className="urgency-content app-icon-red">

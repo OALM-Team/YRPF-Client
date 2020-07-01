@@ -111,6 +111,10 @@ AddEvent("OnKeyPress", function(key)
         CallRemoteEvent("Weapon:StoreWeapon")
     end
 
+    if(IsCtrlPressed() and key == "I") then
+        CallRemoteEvent("Character:Interact")
+    end
+
     -- ShowMap
     if(key == "M") then
         CallRemoteEvent("GlobalUI:ToogleWindow", "bigmap")

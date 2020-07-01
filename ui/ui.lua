@@ -27,8 +27,12 @@ function RequestToogleUI(ui)
 end
 AddEvent("RequestToogleUI", RequestToogleUI)
 
+function LocalToogleUI(ui, state)
+    ExecuteWebJS(GlobalUI, 'dispatchPayload({"type": "SET_WINDOW_STATE", "windowType": "'..ui..'", "windowState": '..state..'})')
+end
+
 AddEvent("OnKeyPress", function(key)
-    if key == "I" then
+    if key == "I" and not IsCtrlPressed() then
         CallRemoteEvent("GlobalUI:ToogleWindow", "inventory")
     end
     if key == "J" then
@@ -40,7 +44,17 @@ AddEvent("OnKeyPress", function(key)
     if key == "H" and IsCtrlPressed() then
         CallRemoteEvent("House:RequestHouseMenu")
     end
+    if key == "Tab" then
+        LocalToogleUI("help", "true")
+    end
 end)
+
+AddEvent("OnKeyRelease", function(key)
+    if key == "Tab" then
+        LocalToogleUI("help", "false")
+    end
+end)
+
 
 AddEvent("SetInputMode", function(mode)
     if(mode == 0) then
