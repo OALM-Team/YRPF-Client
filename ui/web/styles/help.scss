@@ -1,0 +1,33 @@
+#help-page {
+    position: fixed;
+    bottom: 240px;
+    left: 20px;
+    max-width: 600px;
+
+    .help-item {
+        border-radius: 5px;
+        background-color: $transparantColor;
+        font-family: "Roboto";
+        color: white;
+        padding: 7px;
+        font-size: 15px;
+        margin-bottom: 5px;
+        display: inline-block;
+        margin-right: 5px;
+
+        .action-name {
+            margin-right: 10px;
+            display: inline-block;
+        }
+
+        .keybinding {
+            display: inline-block;
+            background-color: $transparantColor;
+            padding: 5px;
+            text-align: center;
+            min-width: 20px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+    }
+}

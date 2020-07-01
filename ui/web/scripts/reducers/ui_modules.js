@@ -23,6 +23,7 @@ const initialState = {
     houseBuy: false,
     welcomeScreen: process.env.NODE_ENV == "development" ? false : true,
     genericMenu: process.env.NODE_ENV == "development" ? true : false,
+    help: process.env.NODE_ENV == "development" ? true : false,
     uiPosition: {
         inventory: {x: 400, y: 250},
         atm: {x: 400, y: 50},

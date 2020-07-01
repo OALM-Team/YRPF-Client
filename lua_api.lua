@@ -27,3 +27,7 @@ end)
 AddFunctionExport("AddRestrictedZone", function(jobId, sx, sy, sz, ex, ey, ez)
     return java.AddRestrictedZone(jobId, sx, sy, sz, ex, ey, ez)
 end)
+
+AddFunctionExport("CreateJob", function(jobId)
+    return java.CreateJob(jobId)
+end)

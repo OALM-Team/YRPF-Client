@@ -55,7 +55,9 @@ export default {
         "29": require("../../assets/icons/twitch_mask.png"),
         "30": require("../../assets/icons/taser.png"),
         "31": require("../../assets/icons/m4.png"),
-        "32": require("../../assets/icons/ump.png")
+        "32": require("../../assets/icons/ump.png"),
+        "33": require("../../assets/icons/bandage.png"),
+        "34": require("../../assets/icons/jack.png")
     },
     worlditems: {
         "50001": require("../../assets/worlditems/50001.png"),
