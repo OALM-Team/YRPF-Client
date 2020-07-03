@@ -21,6 +21,7 @@ import HouseBuy from "./houseBuy";
 import WelcomeScreen from "./welcomescreen";
 import GenericMenu from "./genericmenu";
 import Help from "./help";
+import CustomOutfit from "./customOutfit";
 
 export { 
     App,
@@ -45,5 +46,6 @@ export {
     HouseBuy,
     WelcomeScreen,
     GenericMenu,
-    Help
+    Help,
+    CustomOutfit
 }

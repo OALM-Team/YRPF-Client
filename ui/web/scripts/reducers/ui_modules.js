@@ -5,7 +5,7 @@ console.log();
 
 const initialState = {
     inventory: false,
-    atm: process.env.NODE_ENV == "development" ? true : false,
+    atm: false,
     garage: false,
     vseller: false,
     customCharacter: false,
@@ -24,6 +24,7 @@ const initialState = {
     welcomeScreen: process.env.NODE_ENV == "development" ? false : true,
     genericMenu: process.env.NODE_ENV == "development" ? true : false,
     help: process.env.NODE_ENV == "development" ? true : false,
+    customOutfit: process.env.NODE_ENV == "development" ? true : false,
     uiPosition: {
         inventory: {x: 400, y: 250},
         atm: {x: 400, y: 50},

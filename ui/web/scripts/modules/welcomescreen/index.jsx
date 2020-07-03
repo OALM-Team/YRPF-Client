@@ -37,19 +37,23 @@ class WelcomeScreen extends React.Component {
             <div className="ribbon">
                 <div className="block">
                     <h2>Description</h2>
-                    <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus purus mauris, elementum sed porta a, ultricies in mi. Etiam lobortis pharetra massa, a pretium ligula faucibus nec. Fusce placerat massa luctus faucibus tempor.</span>
+                    <span>
+                        Bienvenue sur le serveur <b>OALM RP</b><br />
+                        Faites de vos envies une réalité ! Rejoignez notre discord pour lire les règles, c'est <b>OBLIGATOIRE</b><br />
+                        Bon jeu à tous sur <b>OALM</b>
+                    </span>
                 </div>
                 <div className="block block-center-text">
-                    <h2>Bienvenue sur YRPF</h2>
+                    <h2>Bienvenue sur OALM</h2>
                     <span>Amusez-vous en respectant les régles</span>
                 </div>
                 <div className="block">
                     <h2>Informations</h2>
                     <span>
                         Gamemode <b>Roleplay</b><br />
-                        Joueurs Max <b>100</b><br />
-                        Discord <b>https://discord.gg/SWGhWz</b><br />
-                        Site Web <b>https://google.com/</b><br />
+                        Joueurs Max <b>200</b><br />
+                        Discord <b>https://discord.gg/vpMEGSz</b><br />
+                        Credits <b>JanHolger, Vugi</b><br />
                     </span>
                 </div>
             </div>
