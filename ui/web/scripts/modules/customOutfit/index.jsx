@@ -3,7 +3,7 @@ import { UIWindow, ArrowSelector, ColorSelector } from "../../components";
 import assets from "../../assets";
 import * as React from "react";
 import constants from "../../actions/constants";
-import options from "./options";
+import options from "../customCharacter/options";
 import * as i18n from "../../i18n";
 
 class CustomCharacter extends React.Component {
@@ -11,7 +11,6 @@ class CustomCharacter extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: "",
             gender: "male",
             body: options.bodies[0].value,
             hair: options.hairs[0].value,
@@ -31,14 +30,6 @@ class CustomCharacter extends React.Component {
     }
 
     requestSave() {
-        if(this.state.name.length < 4) {
-            return false;
-        }
-        if(this.state.name.indexOf(" ") == -1) {
-            return false;
-        }
-        
-        window.CallEvent("RemoteCallInterface", "Character:Style:SavePart", JSON.stringify({partType: "name", value: this.state.name}));
         window.CallEvent("RemoteCallInterface", "Character:Style:SavePart", JSON.stringify({partType: "gender", value: this.state.gender}));
         window.CallEvent("RemoteCallInterface", "Character:Style:SavePart", JSON.stringify({partType: "body", value: this.state.body}));
         window.CallEvent("RemoteCallInterface", "Character:Style:SavePart", JSON.stringify({partType: "hair", value: this.state.hair}));
@@ -46,7 +37,7 @@ class CustomCharacter extends React.Component {
         window.CallEvent("RemoteCallInterface", "Character:Style:SavePart", JSON.stringify({partType: "top", value: this.state.top}));
         window.CallEvent("RemoteCallInterface", "Character:Style:SavePart", JSON.stringify({partType: "pant", value: this.state.pant}));
         window.CallEvent("RemoteCallInterface", "Character:Style:SavePart", JSON.stringify({partType: "shoes", value: this.state.shoes}));
-        window.CallEvent("RemoteCallInterface", "Character:Style:CustomDone", "character");
+        window.CallEvent("RemoteCallInterface", "Character:Style:CustomDone", "outfit");
     }
 
     componentDidUpdate() {
@@ -137,16 +128,6 @@ class CustomCharacter extends React.Component {
         window.CallEvent("SetLocalPlayerRotation", 0, 180, 0)
     }
 
-    isValidForm() {
-        if(this.state.name.length < 4) {
-            return false;
-        }
-        if(this.state.name.indexOf(" ") == -1) {
-            return false;
-        }
-        return true;
-    }
-
     render() {
         return <UIWindow type="customCharacter" title={i18n.t("ui.characterCustom.windowName", [])} width="450px" height="50px"
             x={this.props.uiModules.uiPosition.customCharacter.x} 
@@ -155,16 +136,6 @@ class CustomCharacter extends React.Component {
                 this.props.updateUIPosition(x,y);
             }}
             >
-            <div className="arrow-selector">
-                <div className="arrow-selector-header">{i18n.t("ui.characterCustom.name", [])}</div>
-                <div className="arrow-selector-text" style={{verticalAlign:"middle", textAlign: "center", paddingLeft: "18px"}}>
-                    <input type="text" value={this.state.name} onChange={(evt) => {
-                        if(!/^[a-zA-Z ]+$/.test(evt.target.value)) return;
-                        if(evt.target.value.length > 20) return;
-                        this.setState({name: evt.target.value})
-                    }} />
-                </div>
-            </div>
             <ArrowSelector name={i18n.t("ui.characterCustom.gender", [])} options={options.gender}
                 onChange={this.onGenderChange.bind(this)} />
             <ArrowSelector name={i18n.t("ui.characterCustom.body", [])} 
@@ -184,7 +155,7 @@ class CustomCharacter extends React.Component {
                 options={options.shoes.filter(x => x.gender == this.state.gender)}
                 onChange={this.onShoesChange.bind(this)} />
 
-            <div className={"ui-btn " + (!this.isValidForm() ? "ui-btn-disabled" : "")}
+            <div className={"ui-btn"}
                 onClick={() => { this.requestSave() }}>
                 {i18n.t("ui.common.validate", [])}
             </div>

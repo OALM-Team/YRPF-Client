@@ -6,7 +6,7 @@ import { UIWindow } from "../components";
 import {
     Inventory, ATM, Garage, VSeller, CustomCharacter, VChest, GameMap, XPBar, BigMap, Death, CharacterJob,
     Seller, LangSelector, StateWindow, GrowboxMenu, VehicleState, FoodBar, Phone, HouseBuy, WelcomeScreen,
-    GenericMenu, Help
+    GenericMenu, Help, CustomOutfit
 } from "./";
 import { ToastContainer, toast } from 'react-toastify';
 import * as i18n from "../i18n";
@@ -58,6 +58,7 @@ class App extends React.Component {
             {this.props.uiModules.welcomeScreen ? <WelcomeScreen /> : null}
             {this.props.uiModules.genericMenu ? <GenericMenu /> : null}
             {this.props.uiModules.help ? <Help /> : null}
+            {this.props.uiModules.customOutfit ? <CustomOutfit /> : null}
         </div>
     }
 }

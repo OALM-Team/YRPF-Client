@@ -25,7 +25,9 @@ class Help extends React.Component {
                 {action: "Verrouiller/Dévérrouiller les portes", keybinding: "CTRL+L"},
                 {action: "Modifier Housing", keybinding: "CTRL+E"},
                 {action: "Modifier la caméra", keybinding: "CTRL+V"},
-                {action: "Menu maison", keybinding: "CTRL+H"}
+                {action: "Menu maison", keybinding: "CTRL+H"},
+                {action: "Vue FPS véhicule", keybinding: "CTRL+J"},
+                {action: "Lock vue FPS", keybinding: "N"}
             ]
         }
     }

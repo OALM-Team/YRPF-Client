@@ -35,7 +35,7 @@ AddEvent("OnKeyPress", function(key)
     if key == "I" and not IsCtrlPressed() then
         CallRemoteEvent("GlobalUI:ToogleWindow", "inventory")
     end
-    if key == "J" then
+    if key == "J" and not IsCtrlPressed() then
         CallRemoteEvent("Job:CharacterJobRequest")
     end
     if key == "F1" then
