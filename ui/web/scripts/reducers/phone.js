@@ -98,12 +98,15 @@ export default (state, action) => {
         case constants.ADD_PHONE_URGENCY:
             return {
                 ...state, urgencyMessages: [...state.urgencyMessages,
-                {
-                    id: action.id,
-                    from: action.from,
-                    text: action.text,
-                    service: action.service
-                }
+                    {
+                        id: action.id,
+                        from: action.from,
+                        text: action.text,
+                        service: action.service,
+                        x: action.x,
+                        y: action.y,
+                        z: action.z,
+                    }
                 ]
             }
 

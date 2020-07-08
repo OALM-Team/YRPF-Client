@@ -143,6 +143,15 @@ AddRemoteEvent("Map:RemoveWaypoint", function(uuid)
     DestroyWaypoint(WaypointsList[uuid])
 end)
 
+AddEvent("Local:Map:AddOrRemoveWaypoint", function(name, uuid, x,y,z)
+    if(WaypointsList[uuid] ~= nil) then
+        DestroyWaypoint(WaypointsList[uuid])
+        WaypointsList[uuid] = nil
+        return
+    end
+    WaypointsList[uuid] = CreateWaypoint(x,y,z, name)
+end)
+
 AddRemoteEvent("Time:SetHour", function(hour)
     SetTime(hour)
 end)
