@@ -44,6 +44,11 @@ class UrgencyList extends React.Component {
                         <div className="urgency-content app-icon-red">
                             {e.text}
                         </div>
+                        <div className="ui-btn app-icon-blue" style={{marginTop: "5px"}} onClick={() => {  
+                            window.CallEvent("Local:Map:AddOrRemoveWaypoint", "Urgence", e.id, e.x, e.y, e.z)
+                        }}>
+                            Localiser
+                        </div>
                         <div className="ui-btn app-icon-green" style={{marginTop: "5px"}} onClick={() => {  
                             window.CallEvent("RemoteCallInterface", "Phone:SolveUrgency", JSON.stringify({service: e.service, id: e.id}));
                         }}>

@@ -21,7 +21,8 @@ export default {
         icon_delivery_2: require("../../assets/gamemap/icon_delivery_2.png"),
         icon_turtle: require("../../assets/gamemap/icon_turtle.png"),
         icon_boat_seller: require("../../assets/gamemap/icon_boat_seller.png"),
-        icon_boat_garage: require("../../assets/gamemap/icon_boat_garage.png")
+        icon_boat_garage: require("../../assets/gamemap/icon_boat_garage.png"),
+        icon_atm: require("../../assets/gamemap/icon_atm.png")
     },
     items: {
         "1": require("../../assets/icons/apple.png"),

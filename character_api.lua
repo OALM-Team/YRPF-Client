@@ -109,8 +109,31 @@ AddEvent("OnPlayerStreamIn", function(player)
         -- Plate tag
         TogglePlayerTag(player, "health", false)
         TogglePlayerTag(player, "armor", false)
+        if GetPlayerPropertyValue(player, "isInvisible") ~= nil then
+            if GetPlayerPropertyValue(player, "isInvisible") == "true" then
+                TogglePlayerTag(player, "name", false)
+                TogglePlayerTag(player, "voice", false)
+            end
+        end
+    end
+
+    -- Scale character
+    if GetPlayerPropertyValue(player, "characterScale") ~= nil then
+        Actor = GetPlayerActor(player)
+        local scale = GetPlayerPropertyValue(player, "characterScale")
+        Actor:SetActorScale3D(FVector(tonumber(scale), tonumber(scale), tonumber(scale)))
+        AddPlayerChat(PropertyValue)
     end
 end)
+
+AddEvent("OnPlayerNetworkUpdatePropertyValue", function(player, PropertyName, PropertyValue)
+    if PropertyName == "characterScale" then
+        Actor = GetPlayerActor(player)
+        Actor:SetActorScale3D(FVector(tonumber(PropertyValue), tonumber(PropertyValue), tonumber(PropertyValue)))
+        AddPlayerChat(PropertyValue)
+    end
+end)
+
 
 function UnFreezePlayer()
     SetIgnoreMoveInput(false)

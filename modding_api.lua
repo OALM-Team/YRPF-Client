@@ -1,5 +1,7 @@
 local paks = {}
 paks["YRPF"] = LoadPak("YRPF", "/YRPF/", "../../../OnsetModding/Plugins/YRPF/Content")
+paks["Gang01"] = LoadPak("Gang01", "/Gang01/", "../../../OnsetModding/Plugins/Gang01/Content/")
+paks["Gang02"] = LoadPak("Gang02", "/Gang02/", "../../../OnsetModding/Plugins/Gang02/Content/")
 
 AddEvent("OnObjectStreamIn", function(object)
     if GetObjectPropertyValue(object, "customModelPath") ~= nil then
