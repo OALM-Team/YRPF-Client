@@ -23,8 +23,9 @@ const initialState = {
     houseBuy: false,
     welcomeScreen: process.env.NODE_ENV == "development" ? false : true,
     genericMenu: process.env.NODE_ENV == "development" ? true : false,
-    help: process.env.NODE_ENV == "development" ? true : false,
-    customOutfit: process.env.NODE_ENV == "development" ? true : false,
+    help: false,
+    customOutfit: false,
+    transfertInventory: process.env.NODE_ENV == "development" ? true : false,
     uiPosition: {
         inventory: {x: 400, y: 250},
         atm: {x: 400, y: 50},
@@ -39,7 +40,8 @@ const initialState = {
         langSelector: {x: 500, y: 200},
         growboxmenu: {x: 500, y: 200},
         phone: {x: 500, y: 200},
-        houseBuy: {x: 500, y: 200}
+        houseBuy: {x: 500, y: 200},
+        transfertInventory: {x: 500, y: 200}
     }
 }
 

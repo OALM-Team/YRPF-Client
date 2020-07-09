@@ -22,6 +22,7 @@ import WelcomeScreen from "./welcomescreen";
 import GenericMenu from "./genericmenu";
 import Help from "./help";
 import CustomOutfit from "./customOutfit";
+import TransfertInventory from "./transfertinventory";
 
 export { 
     App,
@@ -47,5 +48,6 @@ export {
     WelcomeScreen,
     GenericMenu,
     Help,
-    CustomOutfit
+    CustomOutfit,
+    TransfertInventory
 }
