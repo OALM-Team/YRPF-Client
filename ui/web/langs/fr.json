@@ -158,6 +158,8 @@
     
     "ui.houseBuy.windowName": "Acheter une maison",
 
+    "ui.chest.windowName": "Coffre",
+
     "item.name.1": "Pomme",
     "item.name.2": "Cash",
     "item.name.3": "Clé de véhicule",
@@ -192,6 +194,7 @@
     "item.name.32": "UMP",
     "item.name.33": "Bandage",
     "item.name.34": "Cric",
+    "item.name.35": "Perceuse",
     
     "ui.item.desc_1": "Une pomme juteuse et pas chère",
     "ui.item.desc_2": "De l'argent simplement",
@@ -227,6 +230,7 @@
     "ui.item.desc_32": "Arme: UMP",
     "ui.item.desc_33": "Pour soigner les petites blessures",
     "ui.item.desc_34": "Pour retourner des véhicules",
+    "ui.item.desc_35": "Pour ouvrir des coffres ou réparer des choses",
 
     "toast.inventory.no_space_left": "Vous n'avez plus de place sur vous",
     "toast.vehicle.lock_off": "Véhicule {0} désormais déverrouillé",

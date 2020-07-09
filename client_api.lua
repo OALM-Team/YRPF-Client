@@ -28,6 +28,13 @@ AddEvent("OnPlayerStartEnterVehicle", function(vehicleId, seatId)
     end
 end)
 
+AddEvent("OnPlayerStartExitVehicle", function(vehicle)
+    if GetVehiclePropertyValue(vehicle, "locked") == 1 then
+        SendLocalToast("error", GetI18NText("action.vehicle.locked"))
+        return false 
+    end
+end)
+
 AddEvent("OnPickupStreamIn", function(pickup)
 	local color = GetPickupPropertyValue(pickup, "color")
 	if color ~= nil and color ~= "" then
@@ -118,6 +125,10 @@ AddEvent("OnKeyPress", function(key)
     -- ShowMap
     if(key == "M") then
         CallRemoteEvent("GlobalUI:ToogleWindow", "bigmap")
+    end
+
+    if(not IsCtrlPressed() and key == "H") then
+        CallRemoteEvent("Vehicle:OnHornCasted")
     end
 
     if(key == "F10") then

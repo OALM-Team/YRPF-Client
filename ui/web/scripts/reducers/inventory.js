@@ -1,17 +1,24 @@
 import constants from "../actions/constants";
 
 const initialState = {
-    items: [],
+    items: [
+        { id: "eee", quantity: 1, itemId: "6", name: "Banane" }
+    ],
     currentWeight: 0,
     maxWeight: 100,
-    hasBag: false
+    hasBag: false,
+    chestCurrentWeight: 10,
+    chestMaxWeight: 150,
+    chestItems: [
+        { id: "zed", quantity: 10, itemId: "12", name: "Eau" }
+    ]
 }
 
 export default (state, action) => {
     if (typeof state === 'undefined') {
         return initialState
     }
-    switch(action.type) {
+    switch (action.type) {
         case constants.ADD_ITEM_INVENTORY:
             return { ...state, items: [...state.items, action.item] }
 
@@ -29,6 +36,15 @@ export default (state, action) => {
             let toRemoteItem = state.items.find(x => x.id == action.id);
             state.items.splice(state.items.indexOf(toRemoteItem), 1);
             return { ...state, items: [...state.items] }
+
+        case constants.CLEAR_CHEST_CONTENT:
+            return { ...state, chestItems: [] }
+
+        case constants.SET_CHEST_WEIGHT:
+            return { ...state, chestCurrentWeight: action.currentWeight, chestMaxWeight: action.maxWeight }
+
+        case constants.ADD_ITEM_CHEST:
+            return { ...state, chestItems: [...state.chestItems, action.item] }
 
         default: return state;
     }
