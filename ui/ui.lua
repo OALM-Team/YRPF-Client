@@ -39,6 +39,9 @@ AddEvent("OnKeyPress", function(key)
         CallRemoteEvent("Job:CharacterJobRequest")
     end
     if key == "F1" then
+        if GetPlayerPropertyValue(GetPlayerId(), "cuffed") == 1 then
+            return
+        end
         CallRemoteEvent("GlobalUI:ToogleWindow", "phone")
     end
     if key == "H" and IsCtrlPressed() then

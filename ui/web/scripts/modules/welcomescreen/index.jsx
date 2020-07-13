@@ -30,9 +30,11 @@ class WelcomeScreen extends React.Component {
             <div className="welcome-img">
             </div>
             <div className="button-area">
-                <div className="ui-btn" style={{width: "250px", marginLeft: "auto", marginRight: "auto"}} onClick={() => this.props.disableScreen()}>
+                {this.props.map.isFirstSpawn ? <div>
+                    
+                </div> : <div className="ui-btn" style={{width: "250px", marginLeft: "auto", marginRight: "auto"}} onClick={() => this.props.disableScreen()}>
                     Rejoindre le serveur
-                </div>
+                </div>}
             </div>
             <div className="ribbon">
                 <div className="block">
@@ -64,7 +66,8 @@ class WelcomeScreen extends React.Component {
 export default connect((state, ownProps) => {
     return {
         uiModules: state.uiModules,
-        _: state.i18n
+        _: state.i18n,
+        map: state.map
     }
 }, (dispatch) => {
     return {
