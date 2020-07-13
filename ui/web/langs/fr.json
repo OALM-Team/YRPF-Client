@@ -195,6 +195,7 @@
     "item.name.33": "Bandage",
     "item.name.34": "Cric",
     "item.name.35": "Perceuse",
+    "item.name.36": "Masque Médicale",
     
     "ui.item.desc_1": "Une pomme juteuse et pas chère",
     "ui.item.desc_2": "De l'argent simplement",
@@ -231,6 +232,7 @@
     "ui.item.desc_33": "Pour soigner les petites blessures",
     "ui.item.desc_34": "Pour retourner des véhicules",
     "ui.item.desc_35": "Pour ouvrir des coffres ou réparer des choses",
+    "ui.item.desc_36": "Pour protéger les autres de vos maladies",
 
     "toast.inventory.no_space_left": "Vous n'avez plus de place sur vous",
     "toast.vehicle.lock_off": "Véhicule {0} désormais déverrouillé",

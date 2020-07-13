@@ -1,6 +1,7 @@
 import constants from "../actions/constants";
 
 const initialState = {
+    isFirstSpawn: false,
     characterPosition: {
         x:0,y:0
     },
