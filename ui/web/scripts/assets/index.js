@@ -22,7 +22,9 @@ export default {
         icon_turtle: require("../../assets/gamemap/icon_turtle.png"),
         icon_boat_seller: require("../../assets/gamemap/icon_boat_seller.png"),
         icon_boat_garage: require("../../assets/gamemap/icon_boat_garage.png"),
-        icon_atm: require("../../assets/gamemap/icon_atm.png")
+        icon_atm: require("../../assets/gamemap/icon_atm.png"),
+        icon_garden: require("../../assets/gamemap/icon_garden.png"),
+        icon_furnace: require("../../assets/gamemap/icon_furnace.png")
     },
     items: {
         "1": require("../../assets/icons/apple.png"),
@@ -60,7 +62,8 @@ export default {
         "33": require("../../assets/icons/bandage.png"),
         "34": require("../../assets/icons/jack.png"),
         "35": require("../../assets/icons/drill.png"),
-        "36": require("../../assets/icons/medical_mask.png")
+        "36": require("../../assets/icons/medical_mask.png"),
+        "37": require("../../assets/icons/crowbar.png")
     },
     worlditems: {
         "50001": require("../../assets/worlditems/50001.png"),

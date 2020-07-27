@@ -16,6 +16,10 @@ export default (state, action) => {
             }, 500)
             return {...state, currentLang: action.lang}
 
+        case constants.ADD_I18N_KEY:
+            i18n.addKeyValue(action.lang, action.key, action.value)
+            return {...state}
+
         default: return state;
     }
 }

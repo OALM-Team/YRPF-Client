@@ -212,6 +212,7 @@
 
     .contacts-screen {
         .contact-item {
+            position: relative;
             padding: 10px;
             transition: 0.2s;
             border-bottom: 1px solid lightgray;
@@ -241,6 +242,17 @@
                 display: inline-block;
                 vertical-align: middle;
                 margin-left: 10px;
+            }
+
+            .delete-contact {
+                color: red;
+                position: absolute;
+                top: 13px;
+                right: 10px;
+                font-size: 20px;
+                cursor: pointer;
+                font-weight: bold;
+                z-index: 100;
             }
         }
     }

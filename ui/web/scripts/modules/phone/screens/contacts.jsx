@@ -31,9 +31,18 @@ class Contacts extends React.Component {
             </div>
             <div className="app-container contacts-screen">
                 {this.props.phone.contacts.map((e,i) => {
-                    return <div className="contact-item" key={i} onClick={() => this.props.setPhoneScreen("message", e.number)}>
-                        <div className="letter-circle">{e.name[0].toUpperCase()}</div>
-                        <div className="contact-name">{e.name}</div>
+                    return <div className="contact-item" key={i}>
+                        <div onClick={() => this.props.setPhoneScreen("message", e.number)}>
+                            <div className="letter-circle">{e.name[0].toUpperCase()}</div>
+                            <div className="contact-name">{e.name}</div>
+                        </div>
+                        <div className="delete-contact" onClick={() => {
+                            window.CallEvent("RemoteCallInterface", "Phone:DeleteContact", e.number);
+                            setTimeout(() => {
+                                this.props.resetContacts();
+                                window.CallEvent("RemoteCallInterface", "Phone:RequestContacts");
+                            }, 500)
+                        }}>x</div>
                     </div>
                 })}
             </div>

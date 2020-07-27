@@ -23,6 +23,10 @@ class GenericMenu extends React.Component {
 
     render() {
         return <div id="generic-menu">
+            <div className="menuheader">
+                <img src={require("../../../assets/small-splach.png")} />
+            </div>
+
             {this.props.genericMenu.items.map((e,i) => {
                 return <div className="item-menu" key={i} onClick={() => {
                     eval(e.action);

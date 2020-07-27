@@ -24,3 +24,7 @@ export const syncWithLua = () => {
         window.CallEvent("I18N:AddKeyValue", k, value);
     }
 }
+
+export const addKeyValue = (lang, key, value) => {
+    langs[lang][key] = value;
+}

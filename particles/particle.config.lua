@@ -1,0 +1,28 @@
+ParticlesLocations = {
+    {
+        x=26735,
+        y=-49954,
+        z=3634,
+        rx=90,
+        ry=0,
+        rz=0,
+        sx=0.5,
+        sy=0.5,
+        sz=0.5,
+        streamDistance=15000,
+        particleAsset="/Game/Vehicle/VFX/PS_VehicleSmoke"
+    },
+    {
+        x=26735,
+        y=-49954,
+        z=4013,
+        rx=90,
+        ry=0,
+        rz=0,
+        sx=0.5,
+        sy=0.5,
+        sz=0.5,
+        streamDistance=15000,
+        particleAsset="/Game/Vehicle/VFX/PS_VehicleSmoke"
+    }
+}

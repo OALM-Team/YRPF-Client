@@ -1,14 +1,20 @@
 #generic-menu {
     background-color: #1b1b1ba2;
     position: fixed;
-    bottom: 130px;
-    left: 50%;
-    width: 250px;
+    bottom: 240px;
+    left: 20px;
+    width: 310px;
     min-height: 50px;
-    transform: translate(-50%, 0);
     border-radius: 7px;
     pointer-events: all;
     overflow: auto;
+    border: 2px solid $mainColor;
+
+    .menuheader {
+        height: 100px;
+        background-color: $transparantColor;
+        border-bottom: 2px solid $mainColor;
+    }
 
     .item-menu {
         user-select: none;

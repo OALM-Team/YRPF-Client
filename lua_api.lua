@@ -28,6 +28,20 @@ AddFunctionExport("AddRestrictedZone", function(jobId, sx, sy, sz, ex, ey, ez)
     return java.AddRestrictedZone(jobId, sx, sy, sz, ex, ey, ez)
 end)
 
+AddFunctionExport("AddI18nKey", function(lang, key, value)
+    return java.AddI18nKey(lang, key, value)
+end)
+
+AddFunctionExport("GetI18nForPlayer", function(player, key, param1, param2)
+    if param1 == nil then
+        param1 = ""
+    end
+    if param2 == nil then
+        param2 = ""
+    end
+    return java.GetI18nForPlayer(player, key, param1, param2)
+end)
+
 --------
 -- Job API
 --------
@@ -50,4 +64,40 @@ end)
 
 AddFunctionExport("SetHarvestAnimation", function(jobId, resourceId, animation, loopInterval, loopAmount, loopSound)
     return java.SetHarvestAnimation(jobId, resourceId, animation, loopInterval, loopAmount, loopSound)
+end)
+
+--------
+-- Item API
+--------
+
+AddFunctionExport("CreateItemTemplate", function(id, name, desc, weight, picture, modelId, modelScale, foodValue, drinkValue, weaponId, ammoPerRecharge, maskId)
+    return java.CreateItemTemplate(id, name, desc, weight, picture, modelId, modelScale, foodValue, drinkValue, weaponId, ammoPerRecharge, maskId)
+end)
+
+--------
+-- Generic Menu API
+--------
+
+AddFunctionExport("CreateMenu", function(player)
+    return java.CreateMenu(player)
+end)
+
+AddFunctionExport("AddMenuItem", function(menuId, text, action)
+    return java.AddMenuItem(menuId, text, action)
+end)
+
+AddFunctionExport("ShowMenu", function(menuId)
+    return java.ShowMenu(menuId)
+end)
+
+--------
+-- Map API
+--------
+
+AddFunctionExport("AddMapMarker", function(type, icon, x, y)
+    return java.AddMapMarker(type, icon, x, y)
+end)
+
+AddFunctionExport("RemoveMapMarker", function(id)
+    return java.RemoveMapMarker(id)
 end)

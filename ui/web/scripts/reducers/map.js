@@ -29,6 +29,11 @@ export default (state, action) => {
         case constants.GAMEMAP_ADD_MARKER:
             state.markers.push(action.marker);
             return {...state, markers: state.markers}
+     
+        case constants.GAMEMAP_REMOVE_MARKER:
+            let toRemove = state.markers.find(x => x.id == action.id);
+            state.markers.splice(state.markers.indexOf(toRemove), 1);
+            return {...state, markers: [...state.markers]}
 
         default: return state;
     }

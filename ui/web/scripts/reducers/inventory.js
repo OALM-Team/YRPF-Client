@@ -1,8 +1,9 @@
 import constants from "../actions/constants";
+import assets from "../assets"
 
 const initialState = {
     items: [
-        { id: "eee", quantity: 1, itemId: "6", name: "Banane" }
+        { id: "eee", quantity: 1, itemId: "100001", name: "Banane" }
     ],
     currentWeight: 0,
     maxWeight: 100,
@@ -45,6 +46,10 @@ export default (state, action) => {
 
         case constants.ADD_ITEM_CHEST:
             return { ...state, chestItems: [...state.chestItems, action.item] }
+
+        case constants.ADD_CUSTOM_ITEM_IMAGE:
+            assets.items[action.id] = action.path;
+            return { ...state }
 
         default: return state;
     }
